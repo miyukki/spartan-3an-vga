@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/media/psf/Home/Develop/spartan-3an-vga/program.ncd
+OUTFILE=/media/psf/Home/Develop/spartan-3an-vga/program.bit
+FAMILY=Spartan3A and Spartan3AN
+PART=xc3s700an-4fgg484
+WORKINGDIR=/media/psf/Home/Develop/spartan-3an-vga
+LICENSE=WebPack
+USER_INFO=210964772_0_0_776

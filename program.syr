@@ -1,0 +1,518 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.21 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.21 secs
+ 
+--> 
+Reading design: program.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "program.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "program"
+Output Format                      : NGC
+Target Device                      : xc3s700an-4-fgg484
+
+---- Source Options
+Top Module Name                    : program
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "../../../../../../../media/psf/Home/Develop/spartan-3an-vga/program.v" in library work
+Module <program> compiled
+No errors in compilation
+Analysis of file <"program.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <program> in library <work> with parameters.
+	FALSE = "0"
+	H_ACTIVE_PIXEL = "00000000000000000000001010000000"
+	H_BPORCH_PIXEL = "00000000000000000000000000110000"
+	H_FPORCH_PIXEL = "00000000000000000000000000010000"
+	H_LIMIT_PIXEL = "00000000000000000000001100100000"
+	H_SYNC_PIXEL = "00000000000000000000000001100000"
+	TRUE = "1"
+	V_ACTIVE_LINE = "00000000000000000000000111100000"
+	V_BPORCH_LINE = "00000000000000000000000000100001"
+	V_FPORCH_LINE = "00000000000000000000000000001010"
+	V_LIMIT_LINE = "00000000000000000000001000001101"
+	V_SYNC_LINE = "00000000000000000000000000000010"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <program>.
+	FALSE = 1'b0
+	H_ACTIVE_PIXEL = 32'sb00000000000000000000001010000000
+	H_BPORCH_PIXEL = 32'sb00000000000000000000000000110000
+	H_FPORCH_PIXEL = 32'sb00000000000000000000000000010000
+	H_LIMIT_PIXEL = 32'sb00000000000000000000001100100000
+	H_SYNC_PIXEL = 32'sb00000000000000000000000001100000
+	TRUE = 1'b1
+	V_ACTIVE_LINE = 32'sb00000000000000000000000111100000
+	V_BPORCH_LINE = 32'sb00000000000000000000000000100001
+	V_FPORCH_LINE = 32'sb00000000000000000000000000001010
+	V_LIMIT_LINE = 32'sb00000000000000000000001000001101
+	V_SYNC_LINE = 32'sb00000000000000000000000000000010
+Module <program> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <program>.
+    Related source file is "../../../../../../../media/psf/Home/Develop/spartan-3an-vga/program.v".
+    Register <vga_g_out> equivalent to <vga_b_out> has been removed
+    Register <vga_r_out> equivalent to <vga_b_out> has been removed
+WARNING:Xst:2475 - Clock and clock enable of counter <color> are driven by the same logic. The clock enable is removed.
+    Found 1-bit register for signal <CLOCK_25M>.
+    Found 4-bit down counter for signal <color>.
+    Found 4-bit adder for signal <color$add0000> created at line 89.
+    Found 1-bit register for signal <led_state0>.
+    Found 1-bit register for signal <led_state1>.
+    Found 1-bit register for signal <led_state2>.
+    Found 10-bit up counter for signal <line_pos>.
+    Found 10-bit up counter for signal <pixel_pos>.
+    Found 4-bit register for signal <vga_b_out>.
+    Found 1-bit register for signal <vga_hsync_out>.
+    Found 1-bit register for signal <vga_vsync_out>.
+    Summary:
+	inferred   3 Counter(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <program> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 4-bit adder                                           : 1
+# Counters                                             : 3
+ 10-bit up counter                                     : 2
+ 4-bit down counter                                    : 1
+# Registers                                            : 7
+ 1-bit register                                        : 6
+ 4-bit register                                        : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 4-bit adder                                           : 1
+# Counters                                             : 3
+ 10-bit up counter                                     : 2
+ 4-bit down counter                                    : 1
+# Registers                                            : 10
+ Flip-Flops                                            : 10
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <program> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block program, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 34
+ Flip-Flops                                            : 34
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : program.ngr
+Top Level Output File Name         : program
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 23
+
+Cell Usage :
+# BELS                             : 97
+#      GND                         : 1
+#      INV                         : 4
+#      LUT1                        : 18
+#      LUT2                        : 6
+#      LUT2_D                      : 1
+#      LUT3                        : 5
+#      LUT4                        : 17
+#      LUT4_D                      : 2
+#      LUT4_L                      : 4
+#      MUXCY                       : 18
+#      VCC                         : 1
+#      XORCY                       : 20
+# FlipFlops/Latches                : 34
+#      FD                          : 2
+#      FDCP                        : 4
+#      FDE                         : 1
+#      FDR                         : 13
+#      FDRE                        : 14
+# Clock Buffers                    : 4
+#      BUFG                        : 1
+#      BUFGP                       : 3
+# IO Buffers                       : 20
+#      IBUF                        : 1
+#      OBUF                        : 19
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s700anfgg484-4 
+
+ Number of Slices:                       29  out of   5888     0%  
+ Number of Slice Flip Flops:             34  out of  11776     0%  
+ Number of 4 input LUTs:                 57  out of  11776     0%  
+ Number of IOs:                          23
+ Number of bonded IOBs:                  23  out of    372     6%  
+ Number of GCLKs:                         4  out of     24    16%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+ROT_A                              | BUFGP                  | 1     |
+CLOCK_25M1                         | BUFG                   | 28    |
+BUTTON_SOUTH                       | BUFGP                  | 4     |
+CLOCK_50M                          | BUFGP                  | 1     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+--------------------------------------+------------------------+-------+
+Control Signal                        | Buffer(FF name)        | Load  |
+--------------------------------------+------------------------+-------+
+color_0__and0000(color_0__and00001:O) | NONE(color_0)          | 1     |
+color_0__and0001(color_0__and00011:O) | NONE(color_0)          | 1     |
+color_1__and0000(color_1__and000011:O)| NONE(color_1)          | 1     |
+color_1__and0001(color_1__and000111:O)| NONE(color_1)          | 1     |
+color_2__and0000(color_2__and000011:O)| NONE(color_2)          | 1     |
+color_2__and0001(color_2__and000111:O)| NONE(color_2)          | 1     |
+color_3__and0000(color_3__and000011:O)| NONE(color_3)          | 1     |
+color_3__and0001(color_3__and000111:O)| NONE(color_3)          | 1     |
+--------------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 5.594ns (Maximum Frequency: 178.763MHz)
+   Minimum input arrival time before clock: 3.508ns
+   Maximum output required time after clock: 5.698ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'ROT_A'
+  Clock period: 1.907ns (frequency: 524.384MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.907ns (Levels of Logic = 0)
+  Source:            led_state0 (FF)
+  Destination:       led_state0 (FF)
+  Source Clock:      ROT_A rising
+  Destination Clock: ROT_A rising
+
+  Data Path: led_state0 to led_state0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.591   0.447  led_state0 (led_state0)
+     FDR:R                     0.869          led_state0
+    ----------------------------------------
+    Total                      1.907ns (1.460ns logic, 0.447ns route)
+                                       (76.6% logic, 23.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLOCK_25M1'
+  Clock period: 5.594ns (frequency: 178.763MHz)
+  Total number of paths / destination ports: 675 / 63
+-------------------------------------------------------------------------
+Delay:               5.594ns (Levels of Logic = 3)
+  Source:            pixel_pos_5 (FF)
+  Destination:       vga_b_out_0 (FF)
+  Source Clock:      CLOCK_25M1 rising
+  Destination Clock: CLOCK_25M1 rising
+
+  Data Path: pixel_pos_5 to vga_b_out_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              4   0.591   0.730  pixel_pos_5 (pixel_pos_5)
+     LUT4:I0->O            1   0.648   0.423  vga_b_out_or00001_SW1 (N10)
+     LUT4:I3->O            2   0.648   0.450  vga_b_out_or000031 (N5)
+     LUT4:I3->O            4   0.648   0.587  vga_b_out_or0000 (vga_b_out_or0000)
+     FDRE:R                    0.869          vga_b_out_0
+    ----------------------------------------
+    Total                      5.594ns (3.404ns logic, 2.190ns route)
+                                       (60.9% logic, 39.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'BUTTON_SOUTH'
+  Clock period: 3.418ns (frequency: 292.569MHz)
+  Total number of paths / destination ports: 10 / 4
+-------------------------------------------------------------------------
+Delay:               3.418ns (Levels of Logic = 2)
+  Source:            color_0 (FF)
+  Destination:       color_3 (FF)
+  Source Clock:      BUTTON_SOUTH rising
+  Destination Clock: BUTTON_SOUTH rising
+
+  Data Path: color_0 to color_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCP:C->Q            12   0.591   1.104  color_0 (color_0)
+     LUT4_L:I0->LO         1   0.648   0.180  color_Q_mux0000<3>1_SW1 (N18)
+     LUT2:I1->O            1   0.643   0.000  color_Q_mux0000<3>1 (color_Q_mux0000<3>)
+     FDCP:D                    0.252          color_3
+    ----------------------------------------
+    Total                      3.418ns (2.134ns logic, 1.284ns route)
+                                       (62.4% logic, 37.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLOCK_50M'
+  Clock period: 1.907ns (frequency: 524.384MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.907ns (Levels of Logic = 0)
+  Source:            CLOCK_25M (FF)
+  Destination:       CLOCK_25M (FF)
+  Source Clock:      CLOCK_50M rising
+  Destination Clock: CLOCK_50M rising
+
+  Data Path: CLOCK_25M to CLOCK_25M
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.591   0.447  CLOCK_25M (CLOCK_25M1)
+     FDR:R                     0.869          CLOCK_25M
+    ----------------------------------------
+    Total                      1.907ns (1.460ns logic, 0.447ns route)
+                                       (76.6% logic, 23.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'BUTTON_SOUTH'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              3.508ns (Levels of Logic = 3)
+  Source:            BUTTON_NORTH (PAD)
+  Destination:       color_3 (FF)
+  Destination Clock: BUTTON_SOUTH rising
+
+  Data Path: BUTTON_NORTH to color_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            11   0.849   0.936  BUTTON_NORTH_IBUF (BUTTON_NORTH_IBUF)
+     LUT4_L:I3->LO         1   0.648   0.180  color_Q_mux0000<3>1_SW1 (N18)
+     LUT2:I1->O            1   0.643   0.000  color_Q_mux0000<3>1 (color_Q_mux0000<3>)
+     FDCP:D                    0.252          color_3
+    ----------------------------------------
+    Total                      3.508ns (2.392ns logic, 1.116ns route)
+                                       (68.2% logic, 31.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLOCK_25M1'
+  Total number of paths / destination ports: 18 / 18
+-------------------------------------------------------------------------
+Offset:              5.698ns (Levels of Logic = 1)
+  Source:            vga_vsync_out (FF)
+  Destination:       VGA_VSYNC (PAD)
+  Source Clock:      CLOCK_25M1 rising
+
+  Data Path: vga_vsync_out to VGA_VSYNC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               4   0.591   0.587  vga_vsync_out (vga_vsync_out)
+     OBUF:I->O                 4.520          VGA_VSYNC_OBUF (VGA_VSYNC)
+    ----------------------------------------
+    Total                      5.698ns (5.111ns logic, 0.587ns route)
+                                       (89.7% logic, 10.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'ROT_A'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              5.558ns (Levels of Logic = 1)
+  Source:            led_state0 (FF)
+  Destination:       LED<0> (PAD)
+  Source Clock:      ROT_A rising
+
+  Data Path: led_state0 to LED<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.591   0.447  led_state0 (led_state0)
+     OBUF:I->O                 4.520          LED_0_OBUF (LED<0>)
+    ----------------------------------------
+    Total                      5.558ns (5.111ns logic, 0.447ns route)
+                                       (92.0% logic, 8.0% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 43.00 secs
+Total CPU time to Xst completion: 14.22 secs
+ 
+--> 
+
+
+Total memory usage is 518664 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
