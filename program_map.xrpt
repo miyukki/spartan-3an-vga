@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Map" timeStamp="Sat Nov 15 14:09:30 2014">
+  <application stringID="Map" timeStamp="Sun Nov 16 16:42:54 2014">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -57,16 +57,16 @@
         <item dataType="int" stringID="MAP_NUM_ERRORS" value="0"/>
         <item dataType="int" stringID="MAP_FILTERED_WARNINGS" value="0"/>
         <item dataType="int" stringID="MAP_NUM_WARNINGS" value="0"/>
-        <item UNITS="KB" dataType="int" stringID="MAP_PEAK_MEMORY" value="645396"/>
-        <item stringID="MAP_TOTAL_REAL_TIME" value="16 secs "/>
-        <item stringID="MAP_TOTAL_CPU_TIME" value="6 secs "/>
+        <item UNITS="KB" dataType="int" stringID="MAP_PEAK_MEMORY" value="646536"/>
+        <item stringID="MAP_TOTAL_REAL_TIME" value="6 secs "/>
+        <item stringID="MAP_TOTAL_CPU_TIME" value="4 secs "/>
       </section>
       <section stringID="MAP_SLICE_REPORTING">
-        <item AVAILABLE="11776" dataType="int" label="Number of Slice Flip Flops" stringID="MAP_NUM_SLICE_FF" value="34"/>
-        <item AVAILABLE="11776" dataType="int" label="Number of 4 input LUTs" stringID="MAP_NUM_4_INPUT_LUT" value="55">
+        <item AVAILABLE="11776" dataType="int" label="Number of Slice Flip Flops" stringID="MAP_NUM_SLICE_FF" value="46"/>
+        <item AVAILABLE="11776" dataType="int" label="Number of 4 input LUTs" stringID="MAP_NUM_4_INPUT_LUT" value="110">
           <item dataType="int" label="Number of route-thrus" stringID="MAP_NUM_LUT_RT" value="18"/>
         </item>
-        <item AVAILABLE="5888" dataType="int" label="Number of occupied Slices" stringID="MAP_OCCUPIED_SLICES" value="36">
+        <item AVAILABLE="5888" dataType="int" label="Number of occupied Slices" stringID="MAP_OCCUPIED_SLICES" value="63">
           <item dataType="int" label="Number of Slices containing unrelated logic" stringID="MAP_NUM_SLICE_UNRELATED" value="0"/>
         </item>
       </section>
@@ -76,7 +76,8 @@
         </section>
       </section>
       <section stringID="MAP_HARD_IP_REPORTING">
-        <item AVAILABLE="24" dataType="int" label="Number of BUFGMUXs" stringID="MAP_NUM_BUFGMUX" value="4"/>
+        <item AVAILABLE="24" dataType="int" label="Number of BUFGMUXs" stringID="MAP_NUM_BUFGMUX" value="5"/>
+        <item AVAILABLE="20" dataType="int" stringID="MAP_NUM_MULT18X18SIO" value="2"/>
       </section>
       <section stringID="MAP_MACRO_RPM_REPORTING">
         <item dataType="int" stringID="MAP_HARD_MACROS" value="0"/>
@@ -96,7 +97,7 @@
           <column label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY"/>
           <column label="Suspend" stringID="SUSPEND"/>
           <row stringID="row" value="1">
-            <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="BUTTON_NORTH"/>
+            <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="BUTTON_EAST"/>
             <item stringID="Type" value="IBUF"/>
             <item stringID="Direction" value="INPUT"/>
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS33"/>
@@ -104,7 +105,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
           </row>
           <row stringID="row" value="2">
-            <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="BUTTON_SOUTH"/>
+            <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="BUTTON_NORTH"/>
             <item stringID="Type" value="IBUF"/>
             <item stringID="Direction" value="INPUT"/>
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS33"/>
@@ -112,13 +113,21 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
           </row>
           <row stringID="row" value="3">
+            <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="BUTTON_SOUTH"/>
+            <item stringID="Type" value="IBUF"/>
+            <item stringID="Direction" value="INPUT"/>
+            <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS33"/>
+            <item stringID="Resistor" value="PULLDOWN"/>
+            <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
+          </row>
+          <row stringID="row" value="4">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="CLOCK_50M"/>
             <item stringID="Type" value="IBUF"/>
             <item stringID="Direction" value="INPUT"/>
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS33"/>
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
           </row>
-          <row stringID="row" value="4">
+          <row stringID="row" value="5">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="LED&lt;0>"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -128,7 +137,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="5">
+          <row stringID="row" value="6">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="LED&lt;1>"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -138,7 +147,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="6">
+          <row stringID="row" value="7">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="LED&lt;2>"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -148,7 +157,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="7">
+          <row stringID="row" value="8">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="LED&lt;3>"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -158,7 +167,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="8">
+          <row stringID="row" value="9">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="LED&lt;4>"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -167,13 +176,6 @@
             <item label="Slew&#xA;Rate" stringID="SLEW_RATE" value="SLOW"/>
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
-          </row>
-          <row stringID="row" value="9">
-            <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="ROT_A"/>
-            <item stringID="Type" value="IBUF"/>
-            <item stringID="Direction" value="INPUT"/>
-            <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS25"/>
-            <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
           </row>
           <row stringID="row" value="10">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="VGA_B&lt;0>"/>
@@ -319,7 +321,7 @@
       </section>
       <section stringID="MAP_RPM_MACROS">
         <section stringID="MAP_SHAPE_SECTION">
-          <item dataType="int" stringID="MAP_NUM_SHAPE" value="2"/>
+          <item dataType="int" stringID="MAP_NUM_SHAPE" value="6"/>
         </section>
       </section>
       <section stringID="MAP_GUIDE_REPORT"/>
@@ -328,6 +330,10 @@
       <section stringID="MAP_CONFIGURATION_STRING_DETAILS"/>
       <section stringID="MAP_GENERAL_CONFIG_DATA">
         <item stringID="MAP_DISABLE_ATTR" value="LOW"/>
+        <item stringID="MAP_AREG" value="0"/>
+        <item stringID="MAP_BREG" value="0"/>
+        <item stringID="MAP_B_INPUT" value="DIRECT"/>
+        <item stringID="MAP_PREG" value="0"/>
       </section>
       <section stringID="MAP_CONTROL_SET_INFORMATION"/>
     </task>

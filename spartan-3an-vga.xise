@@ -322,6 +322,7 @@
     <property xil_pn:name="Working Directory" xil_pn:value="/home/miyukki/Desktop/Parallels Shared Folders/Home/Develop/spartan-3an-vga" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Write Timing Constraints" xil_pn:value="false" xil_pn:valueState="default"/>
     <property xil_pn:name="XOR Collapsing" xil_pn:value="true" xil_pn:valueState="default"/>
+    <property xil_pn:name="iMPACT Project File" xil_pn:value="/media/psf/Home/Develop/spartan-3an-vga/program.ipf" xil_pn:valueState="non-default"/>
     <!--                                                                                  -->
     <!-- The following properties are for internal use only. These should not be modified.-->
     <!--                                                                                  -->

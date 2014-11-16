@@ -40,12 +40,12 @@ module program # (
     output VGA_HSYNC,
     output VGA_VSYNC,
 
-    input ROT_A,
+    // input ROT_A,
     // input ROT_B,
 
     input BUTTON_NORTH,
     // input BUTTON_WEST,
-    // input BUTTON_EAST,
+    input BUTTON_EAST,
     input BUTTON_SOUTH,
     output [4:0] LED
 );
@@ -83,13 +83,30 @@ reg led_state2;
 assign LED[1] = led_state1;
 assign LED[2] = led_state2;
 
+reg [191:0] block = 192'b0;
+reg [3:0] select_line_pos = 4'b0;
+reg [3:0] select_pixel_pos = 4'b0;
+always @(posedge BUTTON_EAST) begin
+    if (BUTTON_EAST == TRUE) begin
+        if (select_pixel_pos == 15) begin
+            select_pixel_pos = 0;
+            if (select_line_pos == 11) begin
+                select_line_pos = 0;
+            end
+            else begin
+                select_line_pos = select_line_pos + 1;
+            end
+        end
+        else begin
+            select_pixel_pos = select_pixel_pos + 1;
+        end
+    end
+end
+
 reg [3:0] color = 4'd15;
-always @(posedge BUTTON_NORTH or posedge BUTTON_SOUTH) begin
+always @(posedge BUTTON_NORTH) begin
     if (BUTTON_NORTH == TRUE) begin
         color <= color + 1;
-    end
-    else if (BUTTON_SOUTH == TRUE) begin
-        color <= color - 1;
     end
 end
 
@@ -102,10 +119,18 @@ always @(posedge CLOCK_25M) begin
         vga_g_out <= 4'd0;
         vga_b_out <= 4'd0;
     end
-    else if (pixel_pos == 0) begin
-        vga_r_out <= color;
-        vga_g_out <= color;
-        vga_b_out <= color;
+    else if (pixel_pos < H_ACTIVE_PIXEL && line_pos < V_ACTIVE_LINE) begin
+        if (select_pixel_pos * 40 <= pixel_pos && pixel_pos < (select_pixel_pos+1) * 40
+            && select_line_pos * 40 <= line_pos && line_pos < (select_line_pos+1) * 40) begin
+            vga_r_out <= 4'd15;
+            vga_g_out <= 4'd0;
+            vga_b_out <= 4'd0;
+        end
+        else begin
+            vga_r_out <= color;
+            vga_g_out <= color;
+            vga_b_out <= color;
+        end
     end
 
     // horizontal sync
@@ -142,7 +167,7 @@ end
 reg led_state0;
 assign LED[0] = led_state0;
 
-always @(posedge ROT_A) begin
+always @(posedge BUTTON_SOUTH) begin
     led_state0 <= !led_state0;
 end
 
