@@ -5,33 +5,47 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
+WARNING:Xst:1583 - You are using an internal switch '-use_new_parser'.
+WARNING:Xst:3152 - You have chosen to run a version of XST which is not the default solution
+   for the specified device family. You are free to use it in order to take
+   advantage of its enhanced HDL parsing/elaboration capabilities. However,
+   please be aware that you may be impacted by  language support differences.
+   This version may also result in circuit performance and device utilization
+   differences for your particular design. You can always revert back to the
+   default XST solution by setting the "use_new_parser" option to value "no" 
+   on the XST command line or in the XST process properties panel.
 Reading design: program.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
-  2) HDL Compilation
-  3) Design Hierarchy Analysis
-  4) HDL Analysis
-  5) HDL Synthesis
-     5.1) HDL Synthesis Report
-  6) Advanced HDL Synthesis
-     6.1) Advanced HDL Synthesis Report
-  7) Low Level Synthesis
-  8) Partition Report
-  9) Final Report
-	9.1) Device utilization summary
-	9.2) Partition Resource Summary
-	9.3) TIMING REPORT
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
 
 
 =========================================================================
@@ -48,6 +62,7 @@ Output Format                      : NGC
 Target Device                      : xc3s700an-4-fgg484
 
 ---- Source Options
+Use New Parser                     : yes
 Top Module Name                    : program
 Automatic FSM Extraction           : YES
 FSM Encoding Algorithm             : Auto
@@ -105,119 +120,244 @@ Slice Utilization Ratio Delta      : 5
 
 
 =========================================================================
-*                          HDL Compilation                              *
+*                          HDL Parsing                                  *
 =========================================================================
-Compiling verilog file "../../../../../../../media/psf/Home/Develop/spartan-3an-vga/program.v" in library work
-Module <program> compiled
-No errors in compilation
-Analysis of file <"program.prj"> succeeded.
- 
+Analyzing Verilog file "/media/psf/Home/Develop/spartan-3an-vga/program.v" into library work
+Parsing module <program>.
 
 =========================================================================
-*                     Design Hierarchy Analysis                         *
+*                            HDL Elaboration                            *
 =========================================================================
-Analyzing hierarchy for module <program> in library <work> with parameters.
-	FALSE = "0"
-	H_ACTIVE_PIXEL = "00000000000000000000001010000000"
-	H_BPORCH_PIXEL = "00000000000000000000000000110000"
-	H_FPORCH_PIXEL = "00000000000000000000000000010000"
-	H_LIMIT_PIXEL = "00000000000000000000001100100000"
-	H_SYNC_PIXEL = "00000000000000000000000001100000"
-	TRUE = "1"
-	V_ACTIVE_LINE = "00000000000000000000000111100000"
-	V_BPORCH_LINE = "00000000000000000000000000100001"
-	V_FPORCH_LINE = "00000000000000000000000000001010"
-	V_LIMIT_LINE = "00000000000000000000001000001101"
-	V_SYNC_LINE = "00000000000000000000000000000010"
 
-
-=========================================================================
-*                            HDL Analysis                               *
-=========================================================================
-Analyzing top module <program>.
-	FALSE = 1'b0
-	H_ACTIVE_PIXEL = 32'sb00000000000000000000001010000000
-	H_BPORCH_PIXEL = 32'sb00000000000000000000000000110000
-	H_FPORCH_PIXEL = 32'sb00000000000000000000000000010000
-	H_LIMIT_PIXEL = 32'sb00000000000000000000001100100000
-	H_SYNC_PIXEL = 32'sb00000000000000000000000001100000
-	TRUE = 1'b1
-	V_ACTIVE_LINE = 32'sb00000000000000000000000111100000
-	V_BPORCH_LINE = 32'sb00000000000000000000000000100001
-	V_FPORCH_LINE = 32'sb00000000000000000000000000001010
-	V_LIMIT_LINE = 32'sb00000000000000000000001000001101
-	V_SYNC_LINE = 32'sb00000000000000000000000000000010
-Module <program> is correct for synthesis.
- 
+Elaborating module <program>.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 72: Result of 14-bit expression is truncated to fit in 13-bit target.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 110: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 120: Result of 32-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 130: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 198: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 202: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 210: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 258: Result of 11-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 261: Result of 11-bit expression is truncated to fit in 10-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
-Performing bidirectional port resolution...
-
 Synthesizing Unit <program>.
-    Related source file is "../../../../../../../media/psf/Home/Develop/spartan-3an-vga/program.v".
-WARNING:Xst:1780 - Signal <block> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-    Register <vga_g_out> equivalent to <vga_b_out> has been removed
-WARNING:Xst:2111 - Clock of counter <select_pixel_pos> seems to be also used in the data or control logic of that element.
-WARNING:Xst:2475 - Clock and clock enable of counter <select_pixel_pos> are driven by the same logic. The clock enable is removed.
-WARNING:Xst:2111 - Clock of counter <select_line_pos> seems to be also used in the data or control logic of that element.
-WARNING:Xst:2111 - Clock of counter <select_line_pos> seems to be also used in the data or control logic of that element.
-WARNING:Xst:2475 - Clock and clock enable of counter <color> are driven by the same logic. The clock enable is removed.
+    Related source file is "/media/psf/Home/Develop/spartan-3an-vga/program.v".
+        TRUE = 1'b1
+        FALSE = 1'b0
+        H_ACTIVE_PIXEL = 640
+        H_FPORCH_PIXEL = 16
+        H_SYNC_PIXEL = 96
+        H_BPORCH_PIXEL = 48
+        H_LIMIT_PIXEL = 800
+        V_ACTIVE_LINE = 480
+        V_FPORCH_LINE = 10
+        V_SYNC_LINE = 2
+        V_BPORCH_LINE = 33
+        V_LIMIT_LINE = 525
+        BLOCK_SIZE = 40
+        SERIAL_CLOCK_PER_BAUD_RATE = 5208
+        SERIAL_STATE_LAST = 8
+        SERIAL_STATE_SENT = 9
+        SERIAL_STATE_WAIT = 10
+WARNING:Xst:647 - Input <BUTTON_EAST> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <BUTTON_SOUTH> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <send_buffer<7>>.
+    Found 1-bit register for signal <send_buffer<5>>.
+    Found 1-bit register for signal <send_buffer<4>>.
+    Found 1-bit register for signal <send_buffer<3>>.
+    Found 1-bit register for signal <send_buffer<2>>.
+    Found 1-bit register for signal <send_buffer<0>>.
+    Found 1-bit register for signal <send_buffer<6>>.
+    Found 1-bit register for signal <send_buffer<1>>.
+    Found 3-bit register for signal <send_buffer_count>.
+    Found 13-bit register for signal <serial_clock_counter>.
+    Found 1-bit register for signal <RS232_DCE_TXD>.
+    Found 4-bit register for signal <tx_counter>.
+    Found 8-bit register for signal <tx_buffer>.
+    Found 8-bit register for signal <rx_buffer>.
+    Found 4-bit register for signal <rx_counter>.
+    Found 192-bit register for signal <block>.
     Found 1-bit register for signal <CLOCK_25M>.
-    Found 4-bit up counter for signal <color>.
-    Found 1-bit register for signal <led_state0>.
+    Found 4-bit register for signal <color>.
     Found 1-bit register for signal <led_state1>.
+    Found 4-bit register for signal <VGA_R>.
+    Found 4-bit register for signal <VGA_G>.
+    Found 4-bit register for signal <VGA_B>.
+    Found 1-bit register for signal <VGA_HSYNC>.
+    Found 1-bit register for signal <VGA_VSYNC>.
+    Found 10-bit register for signal <pixel_pos>.
+    Found 10-bit register for signal <line_pos>.
     Found 1-bit register for signal <led_state2>.
-    Found 10-bit up counter for signal <line_pos>.
-    Found 4-bit adder carry out for signal <mult0000$addsub0001> created at line 123.
-    Found 5x6-bit multiplier for signal <mult0000$mult0000> created at line 123.
-    Found 4-bit adder carry out for signal <mult0001$addsub0001> created at line 123.
-    Found 5x6-bit multiplier for signal <mult0001$mult0000> created at line 123.
-    Found 10-bit up counter for signal <pixel_pos>.
-    Found 4-bit up counter for signal <select_line_pos>.
-    Found 4-bit up counter for signal <select_pixel_pos>.
-    Found 4-bit register for signal <vga_b_out>.
-    Found 1-bit register for signal <vga_hsync_out>.
-    Found 4-bit register for signal <vga_r_out>.
-    Found 10-bit comparator lessequal for signal <vga_r_out$cmp_le0000> created at line 123.
-    Found 10-bit comparator lessequal for signal <vga_r_out$cmp_le0001> created at line 123.
-    Found 11-bit comparator less for signal <vga_r_out$cmp_lt0000> created at line 122.
-    Found 10-bit comparator less for signal <vga_r_out$cmp_lt0001> created at line 122.
-    Found 11-bit comparator less for signal <vga_r_out$cmp_lt0002> created at line 123.
-    Found 11-bit comparator less for signal <vga_r_out$cmp_lt0003> created at line 123.
-    Found 4x6-bit multiplier for signal <vga_r_out$mult0000> created at line 123.
-    Found 4x6-bit multiplier for signal <vga_r_out$mult0001> created at line 123.
-    Found 1-bit register for signal <vga_vsync_out>.
+    Found 1-bit register for signal <CLOCK_SERIAL>.
+    Found 1-bit register for signal <send_buffer<63>>.
+    Found 1-bit register for signal <send_buffer<62>>.
+    Found 1-bit register for signal <send_buffer<61>>.
+    Found 1-bit register for signal <send_buffer<60>>.
+    Found 1-bit register for signal <send_buffer<59>>.
+    Found 1-bit register for signal <send_buffer<58>>.
+    Found 1-bit register for signal <send_buffer<57>>.
+    Found 1-bit register for signal <send_buffer<56>>.
+    Found 1-bit register for signal <send_buffer<55>>.
+    Found 1-bit register for signal <send_buffer<54>>.
+    Found 1-bit register for signal <send_buffer<53>>.
+    Found 1-bit register for signal <send_buffer<52>>.
+    Found 1-bit register for signal <send_buffer<51>>.
+    Found 1-bit register for signal <send_buffer<50>>.
+    Found 1-bit register for signal <send_buffer<49>>.
+    Found 1-bit register for signal <send_buffer<48>>.
+    Found 1-bit register for signal <send_buffer<47>>.
+    Found 1-bit register for signal <send_buffer<46>>.
+    Found 1-bit register for signal <send_buffer<45>>.
+    Found 1-bit register for signal <send_buffer<44>>.
+    Found 1-bit register for signal <send_buffer<43>>.
+    Found 1-bit register for signal <send_buffer<42>>.
+    Found 1-bit register for signal <send_buffer<41>>.
+    Found 1-bit register for signal <send_buffer<40>>.
+    Found 1-bit register for signal <send_buffer<39>>.
+    Found 1-bit register for signal <send_buffer<38>>.
+    Found 1-bit register for signal <send_buffer<37>>.
+    Found 1-bit register for signal <send_buffer<36>>.
+    Found 1-bit register for signal <send_buffer<35>>.
+    Found 1-bit register for signal <send_buffer<34>>.
+    Found 1-bit register for signal <send_buffer<33>>.
+    Found 1-bit register for signal <send_buffer<32>>.
+    Found 1-bit register for signal <send_buffer<31>>.
+    Found 1-bit register for signal <send_buffer<30>>.
+    Found 1-bit register for signal <send_buffer<29>>.
+    Found 1-bit register for signal <send_buffer<28>>.
+    Found 1-bit register for signal <send_buffer<27>>.
+    Found 1-bit register for signal <send_buffer<26>>.
+    Found 1-bit register for signal <send_buffer<25>>.
+    Found 1-bit register for signal <send_buffer<24>>.
+    Found 1-bit register for signal <send_buffer<23>>.
+    Found 1-bit register for signal <send_buffer<22>>.
+    Found 1-bit register for signal <send_buffer<21>>.
+    Found 1-bit register for signal <send_buffer<20>>.
+    Found 1-bit register for signal <send_buffer<19>>.
+    Found 1-bit register for signal <send_buffer<18>>.
+    Found 1-bit register for signal <send_buffer<17>>.
+    Found 1-bit register for signal <send_buffer<16>>.
+    Found 1-bit register for signal <send_buffer<15>>.
+    Found 1-bit register for signal <send_buffer<14>>.
+    Found 1-bit register for signal <send_buffer<13>>.
+    Found 1-bit register for signal <send_buffer<12>>.
+    Found 1-bit register for signal <send_buffer<11>>.
+    Found 1-bit register for signal <send_buffer<10>>.
+    Found 1-bit register for signal <send_buffer<9>>.
+    Found 1-bit register for signal <send_buffer<8>>.
+    Found 13-bit adder for signal <serial_clock_counter[12]_GND_1_o_add_2_OUT> created at line 72.
+    Found 4-bit adder for signal <tx_counter[3]_GND_1_o_add_8_OUT> created at line 110.
+    Found 4-bit adder for signal <rx_counter[3]_GND_1_o_add_30_OUT> created at line 130.
+    Found 4-bit adder for signal <color[3]_GND_1_o_add_73_OUT> created at line 210.
+    Found 14-bit adder for signal <n0328> created at line 229.
+    Found 10-bit adder for signal <pixel_pos[9]_GND_1_o_add_98_OUT> created at line 258.
+    Found 10-bit adder for signal <line_pos[9]_GND_1_o_add_100_OUT> created at line 261.
+    Found 3-bit subtractor for signal <GND_1_o_GND_1_o_sub_13_OUT<2:0>> created at line 120.
+    Found 3 bit to 8 bit decoder compact to one-hot for signal <rx_counter[2]_Decoder_29_OUT> created at line 129
+    Found 1-bit 8-to-1 multiplexer for signal <tx_counter[2]_tx_buffer[7]_Mux_7_o> created at line 109.
+    Found 1-bit 192-to-1 multiplexer for signal <GND_1_o_X_1_o_Mux_84_o> created at line 229.
+    Found 13-bit comparator greater for signal <serial_clock_counter[12]_PWR_1_o_LessThan_2_o> created at line 70
+    Found 4-bit comparator greater for signal <tx_counter[3]_PWR_1_o_LessThan_7_o> created at line 108
+    Found 3-bit comparator greater for signal <GND_1_o_send_buffer_count[2]_LessThan_12_o> created at line 116
+    Found 4-bit comparator greater for signal <rx_counter[3]_PWR_1_o_LessThan_28_o> created at line 128
+    Found 4-bit comparator lessequal for signal <n0035> created at line 129
+    Found 10-bit comparator greater for signal <pixel_pos[9]_PWR_1_o_LessThan_80_o> created at line 224
+    Found 10-bit comparator greater for signal <line_pos[9]_GND_1_o_LessThan_81_o> created at line 224
     Summary:
-	inferred   5 Counter(s).
-	inferred  14 D-type flip-flop(s).
-	inferred   2 Adder/Subtractor(s).
-	inferred   4 Multiplier(s).
-	inferred   6 Comparator(s).
+	inferred   8 Adder/Subtractor(s).
+	inferred 339 D-type flip-flop(s).
+	inferred   7 Comparator(s).
+	inferred  31 Multiplexer(s).
+	inferred   1 Decoder(s).
 Unit <program> synthesized.
 
+Synthesizing Unit <div_10u_6u>.
+    Related source file is "".
+    Found 16-bit adder for signal <n0355> created at line 0.
+    Found 16-bit adder for signal <GND_2_o_b[5]_add_1_OUT> created at line 0.
+    Found 15-bit adder for signal <n0359> created at line 0.
+    Found 15-bit adder for signal <GND_2_o_b[5]_add_3_OUT> created at line 0.
+    Found 14-bit adder for signal <n0363> created at line 0.
+    Found 14-bit adder for signal <GND_2_o_b[5]_add_5_OUT> created at line 0.
+    Found 13-bit adder for signal <n0367> created at line 0.
+    Found 13-bit adder for signal <GND_2_o_b[5]_add_7_OUT> created at line 0.
+    Found 12-bit adder for signal <n0371> created at line 0.
+    Found 12-bit adder for signal <GND_2_o_b[5]_add_9_OUT> created at line 0.
+    Found 11-bit adder for signal <n0375> created at line 0.
+    Found 11-bit adder for signal <GND_2_o_b[5]_add_11_OUT> created at line 0.
+    Found 10-bit adder for signal <n0379> created at line 0.
+    Found 10-bit adder for signal <a[9]_b[5]_add_13_OUT> created at line 0.
+    Found 10-bit adder for signal <n0383> created at line 0.
+    Found 10-bit adder for signal <a[9]_GND_2_o_add_15_OUT[9:0]> created at line 0.
+    Found 10-bit adder for signal <n0387> created at line 0.
+    Found 10-bit adder for signal <a[9]_GND_2_o_add_17_OUT[9:0]> created at line 0.
+    Found 10-bit adder for signal <n0391> created at line 0.
+    Found 10-bit adder for signal <a[9]_GND_2_o_add_19_OUT[9:0]> created at line 0.
+    Found 16-bit comparator lessequal for signal <BUS_0001> created at line 0
+    Found 15-bit comparator lessequal for signal <BUS_0002> created at line 0
+    Found 14-bit comparator lessequal for signal <BUS_0003> created at line 0
+    Found 13-bit comparator lessequal for signal <BUS_0004> created at line 0
+    Found 12-bit comparator lessequal for signal <BUS_0005> created at line 0
+    Found 11-bit comparator lessequal for signal <BUS_0006> created at line 0
+    Found 10-bit comparator lessequal for signal <BUS_0007> created at line 0
+    Found 10-bit comparator lessequal for signal <BUS_0008> created at line 0
+    Found 10-bit comparator lessequal for signal <BUS_0009> created at line 0
+    Found 10-bit comparator lessequal for signal <BUS_0010> created at line 0
+    Found 10-bit comparator lessequal for signal <BUS_0011> created at line 0
+    Summary:
+	inferred  20 Adder/Subtractor(s).
+	inferred  11 Comparator(s).
+	inferred  73 Multiplexer(s).
+Unit <div_10u_6u> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# Multipliers                                          : 4
- 4x6-bit multiplier                                    : 2
- 5x6-bit multiplier                                    : 2
-# Adders/Subtractors                                   : 2
- 4-bit adder carry out                                 : 2
-# Counters                                             : 5
- 10-bit up counter                                     : 2
- 4-bit up counter                                      : 3
-# Registers                                            : 8
- 1-bit register                                        : 6
- 4-bit register                                        : 2
-# Comparators                                          : 6
- 10-bit comparator less                                : 1
- 10-bit comparator lessequal                           : 2
- 11-bit comparator less                                : 3
+# Adders/Subtractors                                   : 48
+ 10-bit adder                                          : 18
+ 11-bit adder                                          : 4
+ 12-bit adder                                          : 4
+ 13-bit adder                                          : 5
+ 14-bit adder                                          : 5
+ 15-bit adder                                          : 4
+ 16-bit adder                                          : 4
+ 3-bit subtractor                                      : 1
+ 4-bit adder                                           : 3
+# Registers                                            : 84
+ 1-bit register                                        : 71
+ 10-bit register                                       : 2
+ 13-bit register                                       : 1
+ 192-bit register                                      : 1
+ 3-bit register                                        : 1
+ 4-bit register                                        : 6
+ 8-bit register                                        : 2
+# Comparators                                          : 29
+ 10-bit comparator greater                             : 2
+ 10-bit comparator lessequal                           : 10
+ 11-bit comparator lessequal                           : 2
+ 12-bit comparator lessequal                           : 2
+ 13-bit comparator greater                             : 1
+ 13-bit comparator lessequal                           : 2
+ 14-bit comparator lessequal                           : 2
+ 15-bit comparator lessequal                           : 2
+ 16-bit comparator lessequal                           : 2
+ 3-bit comparator greater                              : 1
+ 4-bit comparator greater                              : 2
+ 4-bit comparator lessequal                            : 1
+# Multiplexers                                         : 177
+ 1-bit 192-to-1 multiplexer                            : 1
+ 1-bit 2-to-1 multiplexer                              : 165
+ 1-bit 8-to-1 multiplexer                              : 1
+ 10-bit 2-to-1 multiplexer                             : 6
+ 3-bit 2-to-1 multiplexer                              : 2
+ 4-bit 2-to-1 multiplexer                              : 2
+# Decoders                                             : 1
+ 1-of-8 decoder                                        : 1
 
 =========================================================================
 
@@ -225,37 +365,187 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+WARNING:Xst:1293 - FF/Latch <send_buffer_63> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <send_buffer_62> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <send_buffer_61> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <send_buffer_60> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <send_buffer_59> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <send_buffer_58> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <send_buffer_57> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <send_buffer_56> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_48> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_49> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_50> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_51> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_52> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_53> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_55> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_54> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_47> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_46> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_45> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_44> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_43> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_42> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_41> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_40> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_32> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_33> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_34> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_35> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_36> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_37> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_38> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_39> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_31> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_30> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_29> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_28> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_27> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_26> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_25> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_24> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_16> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_17> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_18> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_19> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_20> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_22> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_23> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_21> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_15> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_14> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_13> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_12> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_11> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_10> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_9> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_8> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <program>.
+The following registers are absorbed into counter <serial_clock_counter>: 1 register on signal <serial_clock_counter>.
+The following registers are absorbed into counter <color>: 1 register on signal <color>.
+The following registers are absorbed into counter <pixel_pos>: 1 register on signal <pixel_pos>.
+The following registers are absorbed into counter <line_pos>: 1 register on signal <line_pos>.
+The following registers are absorbed into counter <tx_counter>: 1 register on signal <tx_counter>.
+The following registers are absorbed into counter <rx_counter>: 1 register on signal <rx_counter>.
+Unit <program> synthesized (advanced).
+
+Synthesizing (advanced) Unit <program>.
+	Found 192-bit dynamic shift register for signal <GND_1_o_X_1_o_Mux_84_o>.
+Unit <program> synthesized (advanced).
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Multipliers                                          : 4
- 4x6-bit multiplier                                    : 2
- 5x6-bit multiplier                                    : 2
-# Adders/Subtractors                                   : 2
- 4-bit adder carry out                                 : 2
-# Counters                                             : 5
+# Adders/Subtractors                                   : 22
+ 10-bit adder carry in                                 : 20
+ 3-bit subtractor                                      : 1
+ 8-bit adder                                           : 1
+# Counters                                             : 6
  10-bit up counter                                     : 2
+ 13-bit up counter                                     : 1
  4-bit up counter                                      : 3
-# Registers                                            : 14
- Flip-Flops                                            : 14
-# Comparators                                          : 6
- 10-bit comparator less                                : 1
- 10-bit comparator lessequal                           : 2
- 11-bit comparator less                                : 3
+# Registers                                            : 102
+ Flip-Flops                                            : 102
+# Shift Registers                                      : 1
+ 192-bit dynamic shift register                        : 1
+# Comparators                                          : 29
+ 10-bit comparator greater                             : 2
+ 10-bit comparator lessequal                           : 10
+ 11-bit comparator lessequal                           : 2
+ 12-bit comparator lessequal                           : 2
+ 13-bit comparator greater                             : 1
+ 13-bit comparator lessequal                           : 2
+ 14-bit comparator lessequal                           : 2
+ 15-bit comparator lessequal                           : 2
+ 16-bit comparator lessequal                           : 2
+ 3-bit comparator greater                              : 1
+ 4-bit comparator greater                              : 2
+ 4-bit comparator lessequal                            : 1
+# Multiplexers                                         : 175
+ 1-bit 2-to-1 multiplexer                              : 165
+ 1-bit 8-to-1 multiplexer                              : 1
+ 10-bit 2-to-1 multiplexer                             : 6
+ 3-bit 2-to-1 multiplexer                              : 2
+ 4-bit 2-to-1 multiplexer                              : 1
+# Decoders                                             : 1
+ 1-of-8 decoder                                        : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1293 - FF/Latch <send_buffer_63> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <send_buffer_62> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <send_buffer_61> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <send_buffer_60> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <send_buffer_59> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <send_buffer_58> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <send_buffer_57> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <send_buffer_56> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_48> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_49> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_50> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_51> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_52> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_53> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_54> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_55> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_47> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_46> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_45> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_44> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_43> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_42> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_41> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_40> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_32> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_33> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_34> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_35> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_36> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_37> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_38> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_39> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_31> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_30> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_29> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_28> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_27> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_26> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_25> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_24> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_16> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_17> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_18> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_19> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_20> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_21> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_23> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_22> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_15> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_14> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_13> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_12> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_11> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_10> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_9> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <send_buffer_8> has a constant value of 0 in block <program>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <vga_g_out_1> in Unit <program> is equivalent to the following FF/Latch, which will be removed : <vga_b_out_1> 
+INFO:Xst:2261 - The FF/Latch <vga_g_out_3> in Unit <program> is equivalent to the following FF/Latch, which will be removed : <vga_b_out_3> 
+INFO:Xst:2261 - The FF/Latch <vga_g_out_0> in Unit <program> is equivalent to the following FF/Latch, which will be removed : <vga_b_out_0> 
+INFO:Xst:2261 - The FF/Latch <vga_g_out_2> in Unit <program> is equivalent to the following FF/Latch, which will be removed : <vga_b_out_2> 
 
 Optimizing unit <program> ...
 
+Optimizing unit <div_10u_6u> ...
+
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block program, actual ratio is 1.
+Found area constraint ratio of 100 (+ 5) on block program, actual ratio is 3.
 
 Final Macro Processing ...
 
@@ -263,8 +553,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 46
- Flip-Flops                                            : 46
+# Registers                                            : 87
+ Flip-Flops                                            : 87
 
 =========================================================================
 
@@ -280,60 +570,60 @@ Partition Implementation Status
 -------------------------------
 
 =========================================================================
-*                            Final Report                               *
+*                            Design Summary                             *
 =========================================================================
-Final Results
-RTL Top Level Output File Name     : program.ngr
-Top Level Output File Name         : program
-Output Format                      : NGC
-Optimization Goal                  : Speed
-Keep Hierarchy                     : No
 
-Design Statistics
-# IOs                              : 23
+Top Level Output File Name         : program.ngc
 
-Cell Usage :
-# BELS                             : 187
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 552
 #      GND                         : 1
-#      INV                         : 7
-#      LUT1                        : 18
-#      LUT2                        : 37
-#      LUT2_D                      : 1
-#      LUT3                        : 9
-#      LUT3_L                      : 3
-#      LUT4                        : 32
-#      LUT4_D                      : 2
-#      LUT4_L                      : 2
-#      MUXCY                       : 54
+#      INV                         : 37
+#      LUT1                        : 38
+#      LUT2                        : 14
+#      LUT3                        : 141
+#      LUT3_D                      : 4
+#      LUT3_L                      : 1
+#      LUT4                        : 57
+#      LUT4_D                      : 1
+#      MUXCY                       : 150
+#      MUXF5                       : 10
+#      MUXF6                       : 4
 #      VCC                         : 1
-#      XORCY                       : 20
-# FlipFlops/Latches                : 46
-#      FD                          : 5
-#      FDE                         : 1
-#      FDR                         : 18
-#      FDRE                        : 22
-# Clock Buffers                    : 5
-#      BUFG                        : 2
-#      BUFGP                       : 3
-# IO Buffers                       : 20
-#      IBUF                        : 1
-#      OBUF                        : 19
-# MULTs                            : 2
-#      MULT18X18SIO                : 2
-=========================================================================
+#      XORCY                       : 93
+# FlipFlops/Latches                : 87
+#      FD                          : 2
+#      FDCE                        : 8
+#      FDE                         : 21
+#      FDPE                        : 3
+#      FDR                         : 24
+#      FDRE                        : 18
+#      FDRS                        : 2
+#      FDRSE                       : 9
+# Shift Registers                  : 12
+#      SRL16E                      : 1
+#      SRLC16E                     : 11
+# Clock Buffers                    : 4
+#      BUFG                        : 3
+#      BUFGP                       : 1
+# IO Buffers                       : 23
+#      IBUF                        : 3
+#      OBUF                        : 20
 
 Device utilization summary:
 ---------------------------
 
 Selected Device : 3s700anfgg484-4 
 
- Number of Slices:                       58  out of   5888     0%  
- Number of Slice Flip Flops:             46  out of  11776     0%  
- Number of 4 input LUTs:                111  out of  11776     0%  
- Number of IOs:                          23
- Number of bonded IOBs:                  23  out of    372     6%  
- Number of MULT18X18SIOs:                 2  out of     20    10%  
- Number of GCLKs:                         5  out of     24    20%  
+ Number of Slices:                      175  out of   5888     2%  
+ Number of Slice Flip Flops:             87  out of  11776     0%  
+ Number of 4 input LUTs:                305  out of  11776     2%  
+    Number used as logic:               293
+    Number used as Shift registers:      12
+ Number of IOs:                          26
+ Number of bonded IOBs:                  24  out of    372     6%  
+ Number of GCLKs:                         4  out of     24    16%  
 
 ---------------------------
 Partition Resource Summary:
@@ -345,7 +635,7 @@ Partition Resource Summary:
 
 
 =========================================================================
-TIMING REPORT
+Timing Report
 
 NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
       FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
@@ -356,218 +646,295 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-BUTTON_SOUTH                       | BUFGP                  | 1     |
-CLOCK_25M1                         | BUFG                   | 32    |
-BUTTON_NORTH                       | BUFGP                  | 4     |
-BUTTON_EAST                        | IBUF+BUFG              | 8     |
-CLOCK_50M                          | BUFGP                  | 1     |
+CLOCK_50M                          | BUFGP                  | 15    |
+CLOCK_25M                          | BUFG                   | 32    |
+CLOCK_SERIAL                       | BUFG                   | 48    |
+BUTTON_NORTH                       | IBUF+BUFG              | 4     |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
-No asynchronous control signals found in this design
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+BUTTON_WEST                        | IBUF                   | 11    |
+-----------------------------------+------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 6.005ns (Maximum Frequency: 166.528MHz)
-   Minimum input arrival time before clock: 4.407ns
-   Maximum output required time after clock: 5.698ns
+   Minimum period: 23.827ns (Maximum Frequency: 41.969MHz)
+   Minimum input arrival time before clock: 5.384ns
+   Maximum output required time after clock: 5.558ns
    Maximum combinational path delay: No path found
 
-Timing Detail:
---------------
+Timing Details:
+---------------
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'BUTTON_SOUTH'
-  Clock period: 1.907ns (frequency: 524.384MHz)
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Delay:               1.907ns (Levels of Logic = 0)
-  Source:            led_state0 (FF)
-  Destination:       led_state0 (FF)
-  Source Clock:      BUTTON_SOUTH rising
-  Destination Clock: BUTTON_SOUTH rising
-
-  Data Path: led_state0 to led_state0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDR:C->Q              2   0.591   0.447  led_state0 (led_state0)
-     FDR:R                     0.869          led_state0
-    ----------------------------------------
-    Total                      1.907ns (1.460ns logic, 0.447ns route)
-                                       (76.6% logic, 23.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'CLOCK_25M1'
-  Clock period: 6.005ns (frequency: 166.528MHz)
-  Total number of paths / destination ports: 1324 / 79
--------------------------------------------------------------------------
-Delay:               6.005ns (Levels of Logic = 9)
-  Source:            pixel_pos_4 (FF)
-  Destination:       vga_r_out_1 (FF)
-  Source Clock:      CLOCK_25M1 rising
-  Destination Clock: CLOCK_25M1 rising
-
-  Data Path: pixel_pos_4 to vga_r_out_1
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDR:C->Q              7   0.591   0.788  pixel_pos_4 (pixel_pos_4)
-     LUT2:I1->O            1   0.643   0.000  Mcompar_vga_r_out_cmp_le0000_lut<1> (Mcompar_vga_r_out_cmp_le0000_lut<1>)
-     MUXCY:S->O            1   0.632   0.000  Mcompar_vga_r_out_cmp_le0000_cy<1> (Mcompar_vga_r_out_cmp_le0000_cy<1>)
-     MUXCY:CI->O           1   0.065   0.000  Mcompar_vga_r_out_cmp_le0000_cy<2> (Mcompar_vga_r_out_cmp_le0000_cy<2>)
-     MUXCY:CI->O           1   0.065   0.000  Mcompar_vga_r_out_cmp_le0000_cy<3> (Mcompar_vga_r_out_cmp_le0000_cy<3>)
-     MUXCY:CI->O           1   0.065   0.000  Mcompar_vga_r_out_cmp_le0000_cy<4> (Mcompar_vga_r_out_cmp_le0000_cy<4>)
-     MUXCY:CI->O           1   0.065   0.000  Mcompar_vga_r_out_cmp_le0000_cy<5> (Mcompar_vga_r_out_cmp_le0000_cy<5>)
-     MUXCY:CI->O           1   0.269   0.563  Mcompar_vga_r_out_cmp_le0000_cy<6> (vga_r_out_cmp_le0000)
-     LUT2_D:I0->O          7   0.648   0.711  vga_r_out_and00011_SW0 (N12)
-     LUT4:I3->O            1   0.648   0.000  vga_r_out_mux0000<2>1 (vga_r_out_mux0000<2>)
-     FDRE:D                    0.252          vga_r_out_1
-    ----------------------------------------
-    Total                      6.005ns (3.943ns logic, 2.062ns route)
-                                       (65.7% logic, 34.3% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'BUTTON_NORTH'
-  Clock period: 2.303ns (frequency: 434.216MHz)
-  Total number of paths / destination ports: 10 / 4
--------------------------------------------------------------------------
-Delay:               2.303ns (Levels of Logic = 1)
-  Source:            color_0 (FF)
-  Destination:       color_3 (FF)
-  Source Clock:      BUTTON_NORTH rising
-  Destination Clock: BUTTON_NORTH rising
-
-  Data Path: color_0 to color_3
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDR:C->Q              6   0.591   0.812  color_0 (color_0)
-     LUT4:I0->O            1   0.648   0.000  Mcount_color_xor<3>11 (Result<3>)
-     FD:D                      0.252          color_3
-    ----------------------------------------
-    Total                      2.303ns (1.491ns logic, 0.812ns route)
-                                       (64.7% logic, 35.3% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'BUTTON_EAST'
-  Clock period: 5.055ns (frequency: 197.824MHz)
-  Total number of paths / destination ports: 84 / 20
--------------------------------------------------------------------------
-Delay:               5.055ns (Levels of Logic = 2)
-  Source:            select_pixel_pos_0 (FF)
-  Destination:       select_pixel_pos_0 (FF)
-  Source Clock:      BUTTON_EAST rising
-  Destination Clock: BUTTON_EAST rising
-
-  Data Path: select_pixel_pos_0 to select_pixel_pos_0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDR:C->Q             11   0.591   0.936  select_pixel_pos_0 (select_pixel_pos_0)
-     LUT4:I3->O            3   0.648   0.611  Madd_mult0000_addsub0001_cy<3>11 (Madd_mult0000_index0000)
-     LUT2:I1->O            8   0.643   0.757  select_line_pos_not00011 (select_line_pos_not0001)
-     FDR:R                     0.869          select_pixel_pos_0
-    ----------------------------------------
-    Total                      5.055ns (2.751ns logic, 2.304ns route)
-                                       (54.4% logic, 45.6% route)
-
-=========================================================================
 Timing constraint: Default period analysis for Clock 'CLOCK_50M'
-  Clock period: 1.907ns (frequency: 524.384MHz)
-  Total number of paths / destination ports: 1 / 1
+  Clock period: 5.117ns (frequency: 195.427MHz)
+  Total number of paths / destination ports: 232 / 28
 -------------------------------------------------------------------------
-Delay:               1.907ns (Levels of Logic = 0)
-  Source:            CLOCK_25M (FF)
-  Destination:       CLOCK_25M (FF)
+Delay:               5.117ns (Levels of Logic = 3)
+  Source:            serial_clock_counter_9 (FF)
+  Destination:       serial_clock_counter_0 (FF)
   Source Clock:      CLOCK_50M rising
   Destination Clock: CLOCK_50M rising
 
-  Data Path: CLOCK_25M to CLOCK_25M
+  Data Path: serial_clock_counter_9 to serial_clock_counter_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              2   0.591   0.447  CLOCK_25M (CLOCK_25M1)
-     FDR:R                     0.869          CLOCK_25M
+     FDR:C->Q              2   0.591   0.590  serial_clock_counter_9 (serial_clock_counter_9)
+     LUT3:I0->O            1   0.648   0.500  serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1 (serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1)
+     LUT4:I1->O            1   0.643   0.000  serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv261 (serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv26)
+     MUXF5:I1->O          14   0.276   1.000  serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv26_f5 (serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv)
+     FDR:R                     0.869          serial_clock_counter_0
     ----------------------------------------
-    Total                      1.907ns (1.460ns logic, 0.447ns route)
-                                       (76.6% logic, 23.4% route)
+    Total                      5.117ns (3.027ns logic, 2.090ns route)
+                                       (59.2% logic, 40.8% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'BUTTON_EAST'
-  Total number of paths / destination ports: 12 / 12
+Timing constraint: Default period analysis for Clock 'CLOCK_25M'
+  Clock period: 23.827ns (frequency: 41.969MHz)
+  Total number of paths / destination ports: 85517182 / 83
 -------------------------------------------------------------------------
-Offset:              4.407ns (Levels of Logic = 3)
-  Source:            BUTTON_EAST (PAD)
-  Destination:       select_line_pos_0 (FF)
-  Destination Clock: BUTTON_EAST rising
+Delay:               23.827ns (Levels of Logic = 34)
+  Source:            line_pos_7 (FF)
+  Destination:       vga_r_out_0 (FF)
+  Source Clock:      CLOCK_25M rising
+  Destination Clock: CLOCK_25M rising
 
-  Data Path: BUTTON_EAST to select_line_pos_0
+  Data Path: line_pos_7 to vga_r_out_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             3   0.849   0.674  BUTTON_EAST_IBUF (BUTTON_EAST_IBUF1)
-     LUT3_L:I0->LO         1   0.648   0.132  select_line_pos_and0000_SW0_SW0 (N28)
-     LUT4:I2->O            4   0.648   0.587  select_line_pos_and0000 (select_line_pos_and0000)
-     FDRE:R                    0.869          select_line_pos_0
+     FDRE:C->Q             9   0.591   0.963  line_pos_7 (line_pos_7)
+     LUT1:I0->O            1   0.648   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<4>_cy<3>_rt (line_pos[9]_PWR_1_o_div_82/Mcompar_o<4>_cy<3>_rt)
+     MUXCY:S->O            1   0.632   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<4>_cy<3> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<4>_cy<3>)
+     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<4>_cy<4> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<4>_cy<4>)
+     MUXCY:CI->O          17   0.269   1.083  line_pos[9]_PWR_1_o_div_82/Mcompar_o<4>_cy<5> (line_pos[9]_PWR_1_o_div_82/o<4>)
+     LUT3:I2->O            3   0.648   0.531  line_pos[9]_PWR_1_o_div_82/Mmux_a[0]_a[9]_MUX_509_o141 (line_pos[9]_PWR_1_o_div_82/a[4]_a[9]_MUX_505_o)
+     MUXCY:DI->O           1   0.787   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<1> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<1>)
+     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<2> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<2>)
+     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<3> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<3>)
+     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<4> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<4>)
+     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<5> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<5>)
+     MUXCY:CI->O          19   0.269   1.117  line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<6> (line_pos[9]_PWR_1_o_div_82_OUT<3>)
+     LUT3:I2->O            3   0.648   0.531  line_pos[9]_PWR_1_o_div_82/Mmux_n038541 (line_pos[9]_PWR_1_o_div_82/n0385<3>)
+     MUXCY:DI->O           1   0.787   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<1> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<1>)
+     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<2> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<2>)
+     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<3> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<3>)
+     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<4> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<4>)
+     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<5> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<5>)
+     MUXCY:CI->O          20   0.269   1.134  line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<6> (Madd_n0328_Madd_lut<6>)
+     LUT3:I2->O            2   0.648   0.447  line_pos[9]_PWR_1_o_div_82/Mmux_n038931 (line_pos[9]_PWR_1_o_div_82/n0389<2>)
+     MUXCY:DI->O           1   0.787   0.000  line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<2> (line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<2>)
+     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<3> (line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<3>)
+     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<4> (line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<4>)
+     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<5> (line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<5>)
+     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<6> (line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<6>)
+     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<7> (line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<7>)
+     XORCY:CI->O           1   0.844   0.452  line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_xor<8> (line_pos[9]_PWR_1_o_div_82/a[9]_GND_2_o_add_19_OUT[9:0]<8>)
+     LUT3:I2->O            1   0.648   0.423  line_pos[9]_PWR_1_o_div_82/Mcompar_o<0>_lut<6>_SW1 (N10)
+     LUT4:I3->O            1   0.648   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<0>_lut<6> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<0>_lut<6>)
+     MUXCY:S->O            3   0.836   0.611  line_pos[9]_PWR_1_o_div_82/Mcompar_o<0>_cy<6> (line_pos[9]_PWR_1_o_div_82_OUT<0>)
+     LUT2:I1->O            6   0.643   0.669  Madd_n0328_Madd_lut<4>1 (Madd_n0328_Madd_lut<4>)
+     MUXF5:S->O            1   0.756   0.000  GND_1_o_X_1_o_Mux_84_o_f5 (GND_1_o_X_1_o_Mux_84_o_f5)
+     MUXF6:I0->O           1   0.291   0.452  GND_1_o_X_1_o_Mux_84_o_f6 (GND_1_o_X_1_o_Mux_84_o_f6)
+     LUT4_D:I2->LO         1   0.648   0.103  GND_1_o_X_1_o_Mux_84_o (N33)
+     LUT4:I3->O            4   0.648   0.587  _n06971 (_n0697)
+     FDRSE:S                   0.869          vga_r_out_0
     ----------------------------------------
-    Total                      4.407ns (3.014ns logic, 1.393ns route)
-                                       (68.4% logic, 31.6% route)
+    Total                     23.827ns (14.724ns logic, 9.103ns route)
+                                       (61.8% logic, 38.2% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'CLOCK_25M1'
-  Total number of paths / destination ports: 18 / 18
+Timing constraint: Default period analysis for Clock 'CLOCK_SERIAL'
+  Clock period: 5.892ns (frequency: 169.722MHz)
+  Total number of paths / destination ports: 467 / 102
 -------------------------------------------------------------------------
-Offset:              5.698ns (Levels of Logic = 1)
-  Source:            vga_hsync_out (FF)
-  Destination:       VGA_HSYNC (PAD)
-  Source Clock:      CLOCK_25M1 rising
+Delay:               5.892ns (Levels of Logic = 2)
+  Source:            rx_counter_2 (FF)
+  Destination:       rx_counter_1 (FF)
+  Source Clock:      CLOCK_SERIAL rising
+  Destination Clock: CLOCK_SERIAL rising
 
-  Data Path: vga_hsync_out to VGA_HSYNC
+  Data Path: rx_counter_2 to rx_counter_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               4   0.591   0.587  vga_hsync_out (vga_hsync_out)
-     OBUF:I->O                 4.520          VGA_HSYNC_OBUF (VGA_HSYNC)
+     FDRE:C->Q            12   0.591   1.104  rx_counter_2 (rx_counter_2)
+     LUT3:I0->O           14   0.648   1.032  _n063811 (_n06381)
+     LUT3:I2->O           14   0.648   1.000  rx_counter_cst1 (rx_counter_cst)
+     FDRSE:S                   0.869          rx_counter_1
     ----------------------------------------
-    Total                      5.698ns (5.111ns logic, 0.587ns route)
-                                       (89.7% logic, 10.3% route)
+    Total                      5.892ns (2.756ns logic, 3.136ns route)
+                                       (46.8% logic, 53.2% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'BUTTON_SOUTH'
-  Total number of paths / destination ports: 1 / 1
+Timing constraint: Default period analysis for Clock 'BUTTON_NORTH'
+  Clock period: 2.580ns (frequency: 387.597MHz)
+  Total number of paths / destination ports: 10 / 4
+-------------------------------------------------------------------------
+Delay:               2.580ns (Levels of Logic = 1)
+  Source:            color_0 (FF)
+  Destination:       color_0 (FF)
+  Source Clock:      BUTTON_NORTH rising
+  Destination Clock: BUTTON_NORTH rising
+
+  Data Path: color_0 to color_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              6   0.591   0.669  color_0 (color_0)
+     INV:I->O              1   0.648   0.420  Mcount_color_xor<0>11_INV_0 (Result<0>2)
+     FDE:D                     0.252          color_0
+    ----------------------------------------
+    Total                      2.580ns (1.491ns logic, 1.089ns route)
+                                       (57.8% logic, 42.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLOCK_SERIAL'
+  Total number of paths / destination ports: 63 / 59
+-------------------------------------------------------------------------
+Offset:              5.384ns (Levels of Logic = 3)
+  Source:            BUTTON_WEST (PAD)
+  Destination:       tx_state (FF)
+  Destination Clock: CLOCK_SERIAL rising
+
+  Data Path: BUTTON_WEST to tx_state
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            20   0.849   1.182  BUTTON_WEST_IBUF (BUTTON_WEST_IBUF)
+     LUT4:I1->O            4   0.643   0.667  _n063211 (Mcount_tx_counter_val)
+     LUT2:I1->O            3   0.643   0.531  tx_counter_cst1 (tx_counter_cst)
+     FDRSE:S                   0.869          tx_counter_0
+    ----------------------------------------
+    Total                      5.384ns (3.004ns logic, 2.380ns route)
+                                       (55.8% logic, 44.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'BUTTON_NORTH'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              1.794ns (Levels of Logic = 1)
+  Source:            BUTTON_NORTH (PAD)
+  Destination:       color_0 (FF)
+  Destination Clock: BUTTON_NORTH rising
+
+  Data Path: BUTTON_NORTH to color_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             5   0.849   0.633  BUTTON_NORTH_IBUF (BUTTON_NORTH_IBUF)
+     FDE:CE                    0.312          color_0
+    ----------------------------------------
+    Total                      1.794ns (1.161ns logic, 0.633ns route)
+                                       (64.7% logic, 35.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLOCK_25M'
+  Total number of paths / destination ports: 16 / 16
 -------------------------------------------------------------------------
 Offset:              5.558ns (Levels of Logic = 1)
-  Source:            led_state0 (FF)
-  Destination:       LED<0> (PAD)
-  Source Clock:      BUTTON_SOUTH rising
+  Source:            vga_g_out_3 (FF)
+  Destination:       VGA_G<3> (PAD)
+  Source Clock:      CLOCK_25M rising
 
-  Data Path: led_state0 to LED<0>
+  Data Path: vga_g_out_3 to VGA_G<3>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              2   0.591   0.447  led_state0 (led_state0)
-     OBUF:I->O                 4.520          LED_0_OBUF (LED<0>)
+     FDRE:C->Q             2   0.591   0.447  vga_g_out_3 (vga_g_out_3)
+     OBUF:I->O                 4.520          VGA_G_3_OBUF (VGA_G<3>)
     ----------------------------------------
     Total                      5.558ns (5.111ns logic, 0.447ns route)
                                        (92.0% logic, 8.0% route)
 
 =========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLOCK_SERIAL'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              5.531ns (Levels of Logic = 1)
+  Source:            tx_state (FF)
+  Destination:       RS232_DCE_TXD (PAD)
+  Source Clock:      CLOCK_SERIAL rising
+
+  Data Path: tx_state to RS232_DCE_TXD
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRSE:C->Q            1   0.591   0.420  tx_state (tx_state)
+     OBUF:I->O                 4.520          RS232_DCE_TXD_OBUF (RS232_DCE_TXD)
+    ----------------------------------------
+    Total                      5.531ns (5.111ns logic, 0.420ns route)
+                                       (92.4% logic, 7.6% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock BUTTON_NORTH
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BUTTON_NORTH   |    2.580|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock CLOCK_25M
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BUTTON_NORTH   |    2.303|         |         |         |
+CLOCK_25M      |   23.827|         |         |         |
+CLOCK_SERIAL   |    7.403|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock CLOCK_50M
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLOCK_50M      |    5.117|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock CLOCK_SERIAL
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLOCK_25M      |   19.660|         |         |         |
+CLOCK_SERIAL   |    5.892|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
 
 
-Total REAL time to Xst completion: 14.00 secs
-Total CPU time to Xst completion: 10.60 secs
+Total REAL time to Xst completion: 29.00 secs
+Total CPU time to Xst completion: 10.59 secs
  
+WARNING:Xst:3152 - You have chosen to run a version of XST which is not the default solution
+   for the specified device family. You are free to use it in order to take
+   advantage of its enhanced HDL parsing/elaboration capabilities. However,
+   please be aware that you may be impacted by  language support differences.
+   This version may also result in circuit performance and device utilization
+   differences for your particular design. You can always revert back to the
+   default XST solution by setting the "use_new_parser" option to value "no" 
+   on the XST command line or in the XST process properties panel.
 --> 
 
 
-Total memory usage is 529424 kilobytes
+Total memory usage is 378672 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    6 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of warnings :  126 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
 

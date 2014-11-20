@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Sun Nov 16 16:43:21 2014
+Thu Nov 20 13:52:23 2014
 
 
 # NOTE: This file is designed to be imported into a spreadsheet program
@@ -166,7 +166,7 @@ E12|CLOCK_50M|IBUF|IO_L17N_0/GCLK5|INPUT|LVCMOS33|0||||IBUF||LOCATED|NO|NONE|
 E13||DIFFSTB|IO_L14N_0|UNUSED||0|||||||||
 E14||DIFFSTB|IO_L09N_0|UNUSED||0|||||||||
 E15||DIFFMTB|IO_L04P_0|UNUSED||0|||||||||
-E16||IBUF|IP_0|UNUSED||0|||||||||
+E16|RS232_DCE_RXD|IBUF|IP_0|INPUT|LVCMOS33|0||||IBUF||LOCATED|NO|NONE|
 E17||DIFFMTB|IO_L01P_0|UNUSED||0|||||||||
 E18|||VCCAUX||||||||3.3||||
 E19|||TDO||||||||||||
@@ -187,7 +187,7 @@ F11|||GND||||||||||||
 F12||IBUF|IP_0|UNUSED||0|||||||||
 F13||DIFFMTB|IO_L14P_0|UNUSED||0|||||||||
 F14|||VCCO_0|||0|||||3.30||||
-F15||DIFFSTB|IO_L04N_0|UNUSED||0|||||||||
+F15|RS232_DCE_TXD|IOB|IO_L04N_0|OUTPUT|LVCMOS33|0|8|SLOW|NONE**|||LOCATED|NO|NONE|
 F16||IBUF|IP_0|UNUSED||0|||||||||
 F17|||GND||||||||||||
 F18||DIFFSLR|IO_L40N_1|UNUSED||1|||||||||
@@ -429,7 +429,7 @@ U11||DIFFMTB|IO_L17P_2/GCLK12|UNUSED||2|||||||||
 U12||DIFFSTB|IO_L20N_2/GCLK3|UNUSED||2|||||||||
 U13||DIFFSTB|IO_L26N_2/D3|UNUSED||2|||||||||
 U14|||VCCO_2|||2|||||any******||||
-U15||IBUF|IP_2|UNUSED||2|||||||||
+U15|BUTTON_WEST|IBUF|IP_2|INPUT|LVCMOS33|2|||PULLDOWN|IBUF||LOCATED|NO|NONE|
 U16|||NC||||||||||||
 U17|||GND||||||||||||
 U18|||SUSPEND||||||||||||

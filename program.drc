@@ -1,8 +1,13 @@
 Release 14.7 Drc P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Sun Nov 16 16:43:38 2014
+Thu Nov 20 13:52:48 2014
 
 drc -z program.ncd program.pcf
 
-DRC detected 0 errors and 0 warnings.
+WARNING:PhysDesignRules:367 - The signal <BUTTON_EAST_IBUF> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <BUTTON_SOUTH_IBUF> is incomplete. The
+   signal does not drive any load pins in the design.
+DRC detected 0 errors and 2 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

@@ -2,6 +2,7 @@ set -tmpdir "xst/projnav.tmp"
 set -xsthdpdir "xst"
 run
 -ifn program.prj
+-use_new_parser yes
 -ifmt mixed
 -ofn program
 -ofmt NGC

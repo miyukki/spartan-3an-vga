@@ -31,24 +31,127 @@ module program # (
     parameter V_FPORCH_LINE  = 10,
     parameter V_SYNC_LINE    = 2,
     parameter V_BPORCH_LINE  = 33,
-    parameter V_LIMIT_LINE   = V_ACTIVE_LINE + V_FPORCH_LINE + V_SYNC_LINE + V_BPORCH_LINE
+    parameter V_LIMIT_LINE   = V_ACTIVE_LINE + V_FPORCH_LINE + V_SYNC_LINE + V_BPORCH_LINE,
+
+    parameter BLOCK_SIZE = 40,
+
+    parameter SERIAL_CLOCK_PER_BAUD_RATE = 5208,
+    parameter SERIAL_STATE_LAST = 8,
+    parameter SERIAL_STATE_SENT = 9,
+    parameter SERIAL_STATE_WAIT = 10
 )(
-    input CLOCK_50M,
-    output [3:0] VGA_R,
-    output [3:0] VGA_G,
-    output [3:0] VGA_B,
-    output VGA_HSYNC,
-    output VGA_VSYNC,
+    input wire CLOCK_50M,
+
+    output wire [3:0] VGA_R,
+    output wire [3:0] VGA_G,
+    output wire [3:0] VGA_B,
+    output wire VGA_HSYNC,
+    output wire VGA_VSYNC,
+
+    input wire RS232_DCE_RXD,
+    output wire RS232_DCE_TXD,
 
     // input ROT_A,
     // input ROT_B,
 
-    input BUTTON_NORTH,
-    // input BUTTON_WEST,
-    input BUTTON_EAST,
-    input BUTTON_SOUTH,
-    output [4:0] LED
+    input wire BUTTON_NORTH,
+    input wire BUTTON_WEST,
+    input wire BUTTON_EAST,
+    input wire BUTTON_SOUTH,
+    output wire [4:0] LED
 );
+
+/*
+ * SERIAL CLOCK GENERATOR
+ */
+reg CLOCK_SERIAL = FALSE;
+reg [12:0] serial_clock_counter;
+always @(posedge CLOCK_50M) begin
+    if (serial_clock_counter < SERIAL_CLOCK_PER_BAUD_RATE) begin
+        CLOCK_SERIAL <= FALSE;
+        serial_clock_counter <= serial_clock_counter + 1;
+    end
+    else begin
+        CLOCK_SERIAL <= TRUE;
+        serial_clock_counter <= 0;
+    end
+end
+
+/*
+ * SERIAL TX
+ */
+reg [63:0] send_buffer = 64'b0;
+reg [2:0] send_buffer_count = 3'b0;
+reg [7:0] tx_buffer = 8'b0;
+reg [3:0] tx_counter = SERIAL_STATE_SENT; // 0->start bit sent,1=>first bit sent,...8=>wight bit sent,9=>sent, 10=>not send yet
+reg tx_state = TRUE;
+assign RS232_DCE_TXD = tx_state;
+
+// reg [63:0] receive_buffer = 64'b0;
+// reg [2:0] receive_buffer_count = 3'b0;
+reg [7:0] rx_buffer = 8'b0;
+reg [3:0] rx_counter = SERIAL_STATE_WAIT;
+wire rx_state = RS232_DCE_RXD;
+
+initial begin
+    send_buffer[7:0] <= "B";
+    send_buffer_count <= 1;
+end
+
+always @(posedge CLOCK_SERIAL or posedge BUTTON_WEST) begin
+    if (BUTTON_WEST == TRUE) begin
+        send_buffer[7:0] <= "B";
+        send_buffer_count <= 1;
+    end
+    else begin
+        // TX
+        if (tx_counter < SERIAL_STATE_LAST) begin
+            tx_state <= tx_buffer[tx_counter];
+            tx_counter <= tx_counter + 1;
+        end
+        else if (tx_counter == SERIAL_STATE_LAST) begin
+            tx_state <= TRUE;
+            tx_counter <= SERIAL_STATE_SENT;
+        end
+        else if (tx_counter == SERIAL_STATE_SENT && send_buffer_count > 0) begin
+            tx_buffer <= send_buffer[7:0];
+            tx_counter <= SERIAL_STATE_WAIT;
+            send_buffer <= send_buffer >> 8;
+            send_buffer_count <= send_buffer_count - 1;
+        end
+        else if (tx_counter == SERIAL_STATE_WAIT) begin
+            tx_state <= FALSE;
+            tx_counter <= 0;
+        end
+
+        // RX
+        if (rx_counter < SERIAL_STATE_LAST) begin
+            rx_buffer[rx_counter] <= rx_state;
+            rx_counter <= rx_counter + 1;
+        end
+        else if (rx_counter == SERIAL_STATE_LAST) begin
+            send_buffer[7:0] <= rx_buffer;
+            send_buffer_count <= 1;
+            block <= block << 1;
+            block[0] <= rx_buffer == "1" ? TRUE : FALSE;
+            rx_counter <= SERIAL_STATE_WAIT;
+        end
+        else if (rx_counter == SERIAL_STATE_WAIT && rx_state == FALSE) begin
+            rx_counter <= 0;
+        end
+    end
+end
+
+// serial serial(
+//     .CLOCK_50M(CLOCK_50M),
+//     .TX(RS232_DCE_TXD),
+//     .LED1(LED[3]),
+//     .LED2(LED[4]),
+//     .send_buffer_in(send_buffer),
+//     .send_buffer_count_in(send_buffer_count),
+//     .send_buffer_out(send_buffer_out),
+//     .send_buffer_count_out(send_buffer_count_out)
+// );
 
 /*
  * CLOCK GENERATOR
@@ -75,15 +178,13 @@ assign VGA_G = vga_g_out;
 assign VGA_B = vga_b_out;
 assign VGA_HSYNC = vga_hsync_out;
 assign VGA_VSYNC = vga_vsync_out;
-assign LED[3] = vga_hsync_out;
-assign LED[4] = vga_vsync_out;
 
 reg led_state1;
 reg led_state2;
 assign LED[1] = led_state1;
 assign LED[2] = led_state2;
 
-reg [191:0] block = 192'b0;
+reg [191:0] block = 1'b0;
 reg [3:0] select_line_pos = 4'b0;
 reg [3:0] select_pixel_pos = 4'b0;
 always @(posedge BUTTON_EAST) begin
@@ -120,8 +221,7 @@ always @(posedge CLOCK_25M) begin
         vga_b_out <= 4'd0;
     end
     else if (pixel_pos < H_ACTIVE_PIXEL && line_pos < V_ACTIVE_LINE) begin
-        if (select_pixel_pos * 40 <= pixel_pos && pixel_pos < (select_pixel_pos+1) * 40
-            && select_line_pos * 40 <= line_pos && line_pos < (select_line_pos+1) * 40) begin
+        if (block[(pixel_pos/BLOCK_SIZE) + ((line_pos/BLOCK_SIZE)*16)]) begin
             vga_r_out <= 4'd15;
             vga_g_out <= 4'd0;
             vga_b_out <= 4'd0;
@@ -164,11 +264,12 @@ end
 /*
  * PLAYING
  */
-reg led_state0;
-assign LED[0] = led_state0;
+// reg led_state0;
+assign LED[0] = TRUE;
+assign LED[3] = TRUE;
+assign LED[4] = TRUE;
 
 always @(posedge BUTTON_SOUTH) begin
-    led_state0 <= !led_state0;
 end
 
 endmodule
