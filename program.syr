@@ -12,7 +12,7 @@ Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> 
 WARNING:Xst:1583 - You are using an internal switch '-use_new_parser'.
@@ -130,15 +130,15 @@ Parsing module <program>.
 =========================================================================
 
 Elaborating module <program>.
-WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 72: Result of 14-bit expression is truncated to fit in 13-bit target.
-WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 110: Result of 5-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 120: Result of 32-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 130: Result of 5-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 198: Result of 5-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 202: Result of 5-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 210: Result of 5-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 258: Result of 11-bit expression is truncated to fit in 10-bit target.
-WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 261: Result of 11-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 75: Result of 14-bit expression is truncated to fit in 13-bit target.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 113: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 123: Result of 32-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 133: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 201: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 205: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 213: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 256: Result of 11-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/spartan-3an-vga/program.v" Line 259: Result of 11-bit expression is truncated to fit in 10-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -158,7 +158,10 @@ Synthesizing Unit <program>.
         V_SYNC_LINE = 2
         V_BPORCH_LINE = 33
         V_LIMIT_LINE = 525
-        BLOCK_SIZE = 40
+        BLOCK_SIZE = 10
+        H_BLOCK_COUNT = 64
+        V_BLOCK_COUNT = 48
+        BLOCK_COUNT = 3072
         SERIAL_CLOCK_PER_BAUD_RATE = 5208
         SERIAL_STATE_LAST = 8
         SERIAL_STATE_SENT = 9
@@ -180,7 +183,7 @@ WARNING:Xst:647 - Input <BUTTON_SOUTH> is never used. This port will be preserve
     Found 8-bit register for signal <tx_buffer>.
     Found 8-bit register for signal <rx_buffer>.
     Found 4-bit register for signal <rx_counter>.
-    Found 192-bit register for signal <block>.
+    Found 3072-bit register for signal <block>.
     Found 1-bit register for signal <CLOCK_25M>.
     Found 4-bit register for signal <color>.
     Found 1-bit register for signal <led_state1>.
@@ -249,60 +252,60 @@ WARNING:Xst:647 - Input <BUTTON_SOUTH> is never used. This port will be preserve
     Found 1-bit register for signal <send_buffer<10>>.
     Found 1-bit register for signal <send_buffer<9>>.
     Found 1-bit register for signal <send_buffer<8>>.
-    Found 13-bit adder for signal <serial_clock_counter[12]_GND_1_o_add_2_OUT> created at line 72.
-    Found 4-bit adder for signal <tx_counter[3]_GND_1_o_add_8_OUT> created at line 110.
-    Found 4-bit adder for signal <rx_counter[3]_GND_1_o_add_30_OUT> created at line 130.
-    Found 4-bit adder for signal <color[3]_GND_1_o_add_73_OUT> created at line 210.
-    Found 14-bit adder for signal <n0328> created at line 229.
-    Found 10-bit adder for signal <pixel_pos[9]_GND_1_o_add_98_OUT> created at line 258.
-    Found 10-bit adder for signal <line_pos[9]_GND_1_o_add_100_OUT> created at line 261.
-    Found 3-bit subtractor for signal <GND_1_o_GND_1_o_sub_13_OUT<2:0>> created at line 120.
-    Found 3 bit to 8 bit decoder compact to one-hot for signal <rx_counter[2]_Decoder_29_OUT> created at line 129
-    Found 1-bit 8-to-1 multiplexer for signal <tx_counter[2]_tx_buffer[7]_Mux_7_o> created at line 109.
-    Found 1-bit 192-to-1 multiplexer for signal <GND_1_o_X_1_o_Mux_84_o> created at line 229.
-    Found 13-bit comparator greater for signal <serial_clock_counter[12]_PWR_1_o_LessThan_2_o> created at line 70
-    Found 4-bit comparator greater for signal <tx_counter[3]_PWR_1_o_LessThan_7_o> created at line 108
-    Found 3-bit comparator greater for signal <GND_1_o_send_buffer_count[2]_LessThan_12_o> created at line 116
-    Found 4-bit comparator greater for signal <rx_counter[3]_PWR_1_o_LessThan_28_o> created at line 128
-    Found 4-bit comparator lessequal for signal <n0035> created at line 129
-    Found 10-bit comparator greater for signal <pixel_pos[9]_PWR_1_o_LessThan_80_o> created at line 224
-    Found 10-bit comparator greater for signal <line_pos[9]_GND_1_o_LessThan_81_o> created at line 224
+    Found 13-bit adder for signal <serial_clock_counter[12]_GND_1_o_add_2_OUT> created at line 75.
+    Found 4-bit adder for signal <tx_counter[3]_GND_1_o_add_8_OUT> created at line 113.
+    Found 4-bit adder for signal <rx_counter[3]_GND_1_o_add_30_OUT> created at line 133.
+    Found 4-bit adder for signal <color[3]_GND_1_o_add_73_OUT> created at line 213.
+    Found 16-bit adder for signal <n0328> created at line 227.
+    Found 10-bit adder for signal <pixel_pos[9]_GND_1_o_add_98_OUT> created at line 256.
+    Found 10-bit adder for signal <line_pos[9]_GND_1_o_add_100_OUT> created at line 259.
+    Found 3-bit subtractor for signal <GND_1_o_GND_1_o_sub_13_OUT<2:0>> created at line 123.
+    Found 3 bit to 8 bit decoder compact to one-hot for signal <rx_counter[2]_Decoder_29_OUT> created at line 132
+    Found 1-bit 8-to-1 multiplexer for signal <tx_counter[2]_tx_buffer[7]_Mux_7_o> created at line 112.
+    Found 1-bit 3072-to-1 multiplexer for signal <GND_1_o_X_1_o_Mux_84_o> created at line 227.
+    Found 13-bit comparator greater for signal <serial_clock_counter[12]_PWR_1_o_LessThan_2_o> created at line 73
+    Found 4-bit comparator greater for signal <tx_counter[3]_PWR_1_o_LessThan_7_o> created at line 111
+    Found 3-bit comparator greater for signal <GND_1_o_send_buffer_count[2]_LessThan_12_o> created at line 119
+    Found 4-bit comparator greater for signal <rx_counter[3]_PWR_1_o_LessThan_28_o> created at line 131
+    Found 4-bit comparator lessequal for signal <n0035> created at line 132
+    Found 10-bit comparator greater for signal <pixel_pos[9]_PWR_1_o_LessThan_80_o> created at line 226
+    Found 10-bit comparator greater for signal <line_pos[9]_GND_1_o_LessThan_81_o> created at line 226
     Summary:
 	inferred   8 Adder/Subtractor(s).
-	inferred 339 D-type flip-flop(s).
+	inferred 3219 D-type flip-flop(s).
 	inferred   7 Comparator(s).
 	inferred  31 Multiplexer(s).
 	inferred   1 Decoder(s).
 Unit <program> synthesized.
 
-Synthesizing Unit <div_10u_6u>.
+Synthesizing Unit <div_10u_4u>.
     Related source file is "".
-    Found 16-bit adder for signal <n0355> created at line 0.
-    Found 16-bit adder for signal <GND_2_o_b[5]_add_1_OUT> created at line 0.
-    Found 15-bit adder for signal <n0359> created at line 0.
-    Found 15-bit adder for signal <GND_2_o_b[5]_add_3_OUT> created at line 0.
-    Found 14-bit adder for signal <n0363> created at line 0.
-    Found 14-bit adder for signal <GND_2_o_b[5]_add_5_OUT> created at line 0.
-    Found 13-bit adder for signal <n0367> created at line 0.
-    Found 13-bit adder for signal <GND_2_o_b[5]_add_7_OUT> created at line 0.
-    Found 12-bit adder for signal <n0371> created at line 0.
-    Found 12-bit adder for signal <GND_2_o_b[5]_add_9_OUT> created at line 0.
-    Found 11-bit adder for signal <n0375> created at line 0.
-    Found 11-bit adder for signal <GND_2_o_b[5]_add_11_OUT> created at line 0.
-    Found 10-bit adder for signal <n0379> created at line 0.
-    Found 10-bit adder for signal <a[9]_b[5]_add_13_OUT> created at line 0.
-    Found 10-bit adder for signal <n0383> created at line 0.
+    Found 14-bit adder for signal <n0333> created at line 0.
+    Found 14-bit adder for signal <GND_2_o_b[3]_add_1_OUT> created at line 0.
+    Found 13-bit adder for signal <n0337> created at line 0.
+    Found 13-bit adder for signal <GND_2_o_b[3]_add_3_OUT> created at line 0.
+    Found 12-bit adder for signal <n0341> created at line 0.
+    Found 12-bit adder for signal <GND_2_o_b[3]_add_5_OUT> created at line 0.
+    Found 11-bit adder for signal <n0345> created at line 0.
+    Found 11-bit adder for signal <GND_2_o_b[3]_add_7_OUT> created at line 0.
+    Found 10-bit adder for signal <n0349> created at line 0.
+    Found 10-bit adder for signal <a[9]_b[3]_add_9_OUT> created at line 0.
+    Found 10-bit adder for signal <n0353> created at line 0.
+    Found 10-bit adder for signal <a[9]_GND_2_o_add_11_OUT> created at line 0.
+    Found 10-bit adder for signal <n0357> created at line 0.
+    Found 10-bit adder for signal <a[9]_GND_2_o_add_13_OUT> created at line 0.
+    Found 10-bit adder for signal <n0361> created at line 0.
     Found 10-bit adder for signal <a[9]_GND_2_o_add_15_OUT[9:0]> created at line 0.
-    Found 10-bit adder for signal <n0387> created at line 0.
+    Found 10-bit adder for signal <n0365> created at line 0.
     Found 10-bit adder for signal <a[9]_GND_2_o_add_17_OUT[9:0]> created at line 0.
-    Found 10-bit adder for signal <n0391> created at line 0.
+    Found 10-bit adder for signal <n0369> created at line 0.
     Found 10-bit adder for signal <a[9]_GND_2_o_add_19_OUT[9:0]> created at line 0.
-    Found 16-bit comparator lessequal for signal <BUS_0001> created at line 0
-    Found 15-bit comparator lessequal for signal <BUS_0002> created at line 0
-    Found 14-bit comparator lessequal for signal <BUS_0003> created at line 0
-    Found 13-bit comparator lessequal for signal <BUS_0004> created at line 0
-    Found 12-bit comparator lessequal for signal <BUS_0005> created at line 0
-    Found 11-bit comparator lessequal for signal <BUS_0006> created at line 0
+    Found 14-bit comparator lessequal for signal <BUS_0001> created at line 0
+    Found 13-bit comparator lessequal for signal <BUS_0002> created at line 0
+    Found 12-bit comparator lessequal for signal <BUS_0003> created at line 0
+    Found 11-bit comparator lessequal for signal <BUS_0004> created at line 0
+    Found 10-bit comparator lessequal for signal <BUS_0005> created at line 0
+    Found 10-bit comparator lessequal for signal <BUS_0006> created at line 0
     Found 10-bit comparator lessequal for signal <BUS_0007> created at line 0
     Found 10-bit comparator lessequal for signal <BUS_0008> created at line 0
     Found 10-bit comparator lessequal for signal <BUS_0009> created at line 0
@@ -312,46 +315,43 @@ Synthesizing Unit <div_10u_6u>.
 	inferred  20 Adder/Subtractor(s).
 	inferred  11 Comparator(s).
 	inferred  73 Multiplexer(s).
-Unit <div_10u_6u> synthesized.
+Unit <div_10u_4u> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
 # Adders/Subtractors                                   : 48
- 10-bit adder                                          : 18
+ 10-bit adder                                          : 26
  11-bit adder                                          : 4
  12-bit adder                                          : 4
  13-bit adder                                          : 5
- 14-bit adder                                          : 5
- 15-bit adder                                          : 4
- 16-bit adder                                          : 4
+ 14-bit adder                                          : 4
+ 16-bit adder                                          : 1
  3-bit subtractor                                      : 1
  4-bit adder                                           : 3
 # Registers                                            : 84
  1-bit register                                        : 71
  10-bit register                                       : 2
  13-bit register                                       : 1
- 192-bit register                                      : 1
  3-bit register                                        : 1
+ 3072-bit register                                     : 1
  4-bit register                                        : 6
  8-bit register                                        : 2
 # Comparators                                          : 29
  10-bit comparator greater                             : 2
- 10-bit comparator lessequal                           : 10
+ 10-bit comparator lessequal                           : 14
  11-bit comparator lessequal                           : 2
  12-bit comparator lessequal                           : 2
  13-bit comparator greater                             : 1
  13-bit comparator lessequal                           : 2
  14-bit comparator lessequal                           : 2
- 15-bit comparator lessequal                           : 2
- 16-bit comparator lessequal                           : 2
  3-bit comparator greater                              : 1
  4-bit comparator greater                              : 2
  4-bit comparator lessequal                            : 1
 # Multiplexers                                         : 177
- 1-bit 192-to-1 multiplexer                            : 1
  1-bit 2-to-1 multiplexer                              : 165
+ 1-bit 3072-to-1 multiplexer                           : 1
  1-bit 8-to-1 multiplexer                              : 1
  10-bit 2-to-1 multiplexer                             : 6
  3-bit 2-to-1 multiplexer                              : 2
@@ -432,7 +432,7 @@ The following registers are absorbed into counter <rx_counter>: 1 register on si
 Unit <program> synthesized (advanced).
 
 Synthesizing (advanced) Unit <program>.
-	Found 192-bit dynamic shift register for signal <GND_1_o_X_1_o_Mux_84_o>.
+	Found 3072-bit dynamic shift register for signal <GND_1_o_X_1_o_Mux_84_o>.
 Unit <program> synthesized (advanced).
 
 =========================================================================
@@ -441,8 +441,8 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # Adders/Subtractors                                   : 22
  10-bit adder carry in                                 : 20
+ 12-bit adder                                          : 1
  3-bit subtractor                                      : 1
- 8-bit adder                                           : 1
 # Counters                                             : 6
  10-bit up counter                                     : 2
  13-bit up counter                                     : 1
@@ -450,17 +450,15 @@ Macro Statistics
 # Registers                                            : 102
  Flip-Flops                                            : 102
 # Shift Registers                                      : 1
- 192-bit dynamic shift register                        : 1
+ 3072-bit dynamic shift register                       : 1
 # Comparators                                          : 29
  10-bit comparator greater                             : 2
- 10-bit comparator lessequal                           : 10
+ 10-bit comparator lessequal                           : 14
  11-bit comparator lessequal                           : 2
  12-bit comparator lessequal                           : 2
  13-bit comparator greater                             : 1
  13-bit comparator lessequal                           : 2
  14-bit comparator lessequal                           : 2
- 15-bit comparator lessequal                           : 2
- 16-bit comparator lessequal                           : 2
  3-bit comparator greater                              : 1
  4-bit comparator greater                              : 2
  4-bit comparator lessequal                            : 1
@@ -541,11 +539,12 @@ INFO:Xst:2261 - The FF/Latch <vga_g_out_2> in Unit <program> is equivalent to th
 
 Optimizing unit <program> ...
 
-Optimizing unit <div_10u_6u> ...
+Optimizing unit <div_10u_4u> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block program, actual ratio is 3.
+Found area constraint ratio of 100 (+ 5) on block program, actual ratio is 6.
+FlipFlop pixel_pos_5 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -553,8 +552,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 87
- Flip-Flops                                            : 87
+# Registers                                            : 88
+ Flip-Flops                                            : 88
 
 =========================================================================
 
@@ -577,33 +576,35 @@ Top Level Output File Name         : program.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 552
+# BELS                             : 680
 #      GND                         : 1
-#      INV                         : 37
-#      LUT1                        : 38
-#      LUT2                        : 14
-#      LUT3                        : 141
-#      LUT3_D                      : 4
+#      INV                         : 23
+#      LUT1                        : 34
+#      LUT2                        : 17
+#      LUT2_D                      : 2
+#      LUT3                        : 122
+#      LUT3_D                      : 2
 #      LUT3_L                      : 1
-#      LUT4                        : 57
-#      LUT4_D                      : 1
-#      MUXCY                       : 150
-#      MUXF5                       : 10
-#      MUXF6                       : 4
+#      LUT4                        : 97
+#      LUT4_D                      : 3
+#      LUT4_L                      : 3
+#      MUXCY                       : 116
+#      MUXF5                       : 121
+#      MUXF6                       : 56
 #      VCC                         : 1
-#      XORCY                       : 93
-# FlipFlops/Latches                : 87
+#      XORCY                       : 81
+# FlipFlops/Latches                : 88
 #      FD                          : 2
 #      FDCE                        : 8
 #      FDE                         : 21
 #      FDPE                        : 3
-#      FDR                         : 24
+#      FDR                         : 25
 #      FDRE                        : 18
 #      FDRS                        : 2
 #      FDRSE                       : 9
-# Shift Registers                  : 12
+# Shift Registers                  : 192
 #      SRL16E                      : 1
-#      SRLC16E                     : 11
+#      SRLC16E                     : 191
 # Clock Buffers                    : 4
 #      BUFG                        : 3
 #      BUFGP                       : 1
@@ -616,11 +617,11 @@ Device utilization summary:
 
 Selected Device : 3s700anfgg484-4 
 
- Number of Slices:                      175  out of   5888     2%  
- Number of Slice Flip Flops:             87  out of  11776     0%  
- Number of 4 input LUTs:                305  out of  11776     2%  
-    Number used as logic:               293
-    Number used as Shift registers:      12
+ Number of Slices:                      376  out of   5888     6%  
+ Number of Slice Flip Flops:             88  out of  11776     0%  
+ Number of 4 input LUTs:                496  out of  11776     4%  
+    Number used as logic:               304
+    Number used as Shift registers:     192
  Number of IOs:                          26
  Number of bonded IOBs:                  24  out of    372     6%  
  Number of GCLKs:                         4  out of     24    16%  
@@ -647,8 +648,8 @@ Clock Information:
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
 CLOCK_50M                          | BUFGP                  | 15    |
-CLOCK_25M                          | BUFG                   | 32    |
-CLOCK_SERIAL                       | BUFG                   | 48    |
+CLOCK_25M                          | BUFG                   | 33    |
+CLOCK_SERIAL                       | BUFG                   | 228   |
 BUTTON_NORTH                       | IBUF+BUFG              | 4     |
 -----------------------------------+------------------------+-------+
 
@@ -664,7 +665,7 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 23.827ns (Maximum Frequency: 41.969MHz)
+   Minimum period: 24.554ns (Maximum Frequency: 40.726MHz)
    Minimum input arrival time before clock: 5.384ns
    Maximum output required time after clock: 5.558ns
    Maximum combinational path delay: No path found
@@ -699,65 +700,57 @@ Delay:               5.117ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLOCK_25M'
-  Clock period: 23.827ns (frequency: 41.969MHz)
-  Total number of paths / destination ports: 85517182 / 83
+  Clock period: 24.554ns (frequency: 40.726MHz)
+  Total number of paths / destination ports: 146704942 / 85
 -------------------------------------------------------------------------
-Delay:               23.827ns (Levels of Logic = 34)
-  Source:            line_pos_7 (FF)
+Delay:               24.554ns (Levels of Logic = 26)
+  Source:            pixel_pos_9 (FF)
   Destination:       vga_r_out_0 (FF)
   Source Clock:      CLOCK_25M rising
   Destination Clock: CLOCK_25M rising
 
-  Data Path: line_pos_7 to vga_r_out_0
+  Data Path: pixel_pos_9 to vga_r_out_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             9   0.591   0.963  line_pos_7 (line_pos_7)
-     LUT1:I0->O            1   0.648   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<4>_cy<3>_rt (line_pos[9]_PWR_1_o_div_82/Mcompar_o<4>_cy<3>_rt)
-     MUXCY:S->O            1   0.632   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<4>_cy<3> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<4>_cy<3>)
-     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<4>_cy<4> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<4>_cy<4>)
-     MUXCY:CI->O          17   0.269   1.083  line_pos[9]_PWR_1_o_div_82/Mcompar_o<4>_cy<5> (line_pos[9]_PWR_1_o_div_82/o<4>)
-     LUT3:I2->O            3   0.648   0.531  line_pos[9]_PWR_1_o_div_82/Mmux_a[0]_a[9]_MUX_509_o141 (line_pos[9]_PWR_1_o_div_82/a[4]_a[9]_MUX_505_o)
-     MUXCY:DI->O           1   0.787   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<1> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<1>)
-     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<2> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<2>)
-     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<3> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<3>)
-     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<4> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<4>)
-     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<5> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<5>)
-     MUXCY:CI->O          19   0.269   1.117  line_pos[9]_PWR_1_o_div_82/Mcompar_o<3>_cy<6> (line_pos[9]_PWR_1_o_div_82_OUT<3>)
-     LUT3:I2->O            3   0.648   0.531  line_pos[9]_PWR_1_o_div_82/Mmux_n038541 (line_pos[9]_PWR_1_o_div_82/n0385<3>)
-     MUXCY:DI->O           1   0.787   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<1> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<1>)
-     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<2> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<2>)
-     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<3> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<3>)
-     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<4> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<4>)
-     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<5> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<5>)
-     MUXCY:CI->O          20   0.269   1.134  line_pos[9]_PWR_1_o_div_82/Mcompar_o<2>_cy<6> (Madd_n0328_Madd_lut<6>)
-     LUT3:I2->O            2   0.648   0.447  line_pos[9]_PWR_1_o_div_82/Mmux_n038931 (line_pos[9]_PWR_1_o_div_82/n0389<2>)
-     MUXCY:DI->O           1   0.787   0.000  line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<2> (line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<2>)
-     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<3> (line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<3>)
-     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<4> (line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<4>)
-     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<5> (line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<5>)
-     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<6> (line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<6>)
-     MUXCY:CI->O           1   0.065   0.000  line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<7> (line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<7>)
-     XORCY:CI->O           1   0.844   0.452  line_pos[9]_PWR_1_o_div_82/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_xor<8> (line_pos[9]_PWR_1_o_div_82/a[9]_GND_2_o_add_19_OUT[9:0]<8>)
-     LUT3:I2->O            1   0.648   0.423  line_pos[9]_PWR_1_o_div_82/Mcompar_o<0>_lut<6>_SW1 (N10)
-     LUT4:I3->O            1   0.648   0.000  line_pos[9]_PWR_1_o_div_82/Mcompar_o<0>_lut<6> (line_pos[9]_PWR_1_o_div_82/Mcompar_o<0>_lut<6>)
-     MUXCY:S->O            3   0.836   0.611  line_pos[9]_PWR_1_o_div_82/Mcompar_o<0>_cy<6> (line_pos[9]_PWR_1_o_div_82_OUT<0>)
-     LUT2:I1->O            6   0.643   0.669  Madd_n0328_Madd_lut<4>1 (Madd_n0328_Madd_lut<4>)
-     MUXF5:S->O            1   0.756   0.000  GND_1_o_X_1_o_Mux_84_o_f5 (GND_1_o_X_1_o_Mux_84_o_f5)
-     MUXF6:I0->O           1   0.291   0.452  GND_1_o_X_1_o_Mux_84_o_f6 (GND_1_o_X_1_o_Mux_84_o_f6)
-     LUT4_D:I2->LO         1   0.648   0.103  GND_1_o_X_1_o_Mux_84_o (N33)
-     LUT4:I3->O            4   0.648   0.587  _n06971 (_n0697)
+     FDR:C->Q             19   0.591   1.228  pixel_pos_9 (pixel_pos_9)
+     LUT4:I0->O            1   0.648   0.000  pixel_pos[9]_PWR_1_o_div_81/o<4>21_F (N228)
+     MUXF5:I0->O          97   0.276   1.315  pixel_pos[9]_PWR_1_o_div_81/o<4>21 (pixel_pos[9]_PWR_1_o_div_81_OUT<4>)
+     LUT4:I2->O            1   0.648   0.000  pixel_pos[9]_PWR_1_o_div_81/Madd_a[9]_GND_2_o_add_15_OUT[9:0]_Madd_lut<8>1 (pixel_pos[9]_PWR_1_o_div_81/Madd_a[9]_GND_2_o_add_15_OUT[9:0]_Madd_lut<8>1)
+     XORCY:LI->O           3   0.720   0.563  pixel_pos[9]_PWR_1_o_div_81/Madd_a[9]_GND_2_o_add_15_OUT[9:0]_Madd_xor<8> (pixel_pos[9]_PWR_1_o_div_81/a[9]_GND_2_o_add_15_OUT[9:0]<8>)
+     LUT3:I2->O            1   0.648   0.423  pixel_pos[9]_PWR_1_o_div_81/Mcompar_o<2>_lut<4>_SW1 (N65)
+     LUT4:I3->O            1   0.648   0.000  pixel_pos[9]_PWR_1_o_div_81/Mcompar_o<2>_lut<4> (pixel_pos[9]_PWR_1_o_div_81/Mcompar_o<2>_lut<4>)
+     MUXCY:S->O          208   0.836   1.350  pixel_pos[9]_PWR_1_o_div_81/Mcompar_o<2>_cy<4> (pixel_pos[9]_PWR_1_o_div_81_OUT<2>)
+     LUT3:I2->O            1   0.648   0.420  pixel_pos[9]_PWR_1_o_div_81/Mmux_n036741 (pixel_pos[9]_PWR_1_o_div_81/n0367<3>)
+     MUXCY:DI->O           1   0.787   0.000  pixel_pos[9]_PWR_1_o_div_81/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<3> (pixel_pos[9]_PWR_1_o_div_81/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<3>)
+     MUXCY:CI->O           1   0.065   0.000  pixel_pos[9]_PWR_1_o_div_81/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<4> (pixel_pos[9]_PWR_1_o_div_81/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<4>)
+     MUXCY:CI->O           1   0.065   0.000  pixel_pos[9]_PWR_1_o_div_81/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<5> (pixel_pos[9]_PWR_1_o_div_81/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_cy<5>)
+     XORCY:CI->O           1   0.844   0.452  pixel_pos[9]_PWR_1_o_div_81/Madd_a[9]_GND_2_o_add_19_OUT[9:0]_Madd_xor<6> (pixel_pos[9]_PWR_1_o_div_81/a[9]_GND_2_o_add_19_OUT[9:0]<6>)
+     LUT3:I2->O            1   0.648   0.423  pixel_pos[9]_PWR_1_o_div_81/Mcompar_o<0>_lut<4>_SW1 (N26)
+     LUT4:I3->O            1   0.648   0.000  pixel_pos[9]_PWR_1_o_div_81/Mcompar_o<0>_lut<4> (pixel_pos[9]_PWR_1_o_div_81/Mcompar_o<0>_lut<4>)
+     MUXCY:S->O            1   0.632   0.000  pixel_pos[9]_PWR_1_o_div_81/Mcompar_o<0>_cy<4> (pixel_pos[9]_PWR_1_o_div_81/Mcompar_o<0>_cy<4>)
+     MUXCY:CI->O         192   0.269   1.313  pixel_pos[9]_PWR_1_o_div_81/Mcompar_o<0>_cy<5> (pixel_pos[9]_PWR_1_o_div_81_OUT<0>)
+     SRLC16E:A0->Q         1   0.648   0.000  Mshreg_GND_1_o_X_1_o_Mux_84_o_0 (Mshreg_GND_1_o_X_1_o_Mux_84_o_01)
+     MUXF5:I0->O           1   0.276   0.000  GND_1_o_X_1_o_Mux_84_o_f5 (GND_1_o_X_1_o_Mux_84_o_f5)
+     MUXF6:I0->O           1   0.291   0.500  GND_1_o_X_1_o_Mux_84_o_f6 (GND_1_o_X_1_o_Mux_84_o_f6)
+     LUT3:I1->O            1   0.643   0.000  GND_1_o_X_1_o_Mux_84_o (GND_1_o_X_1_o_Mux_84_o1)
+     MUXF5:I0->O           1   0.276   0.000  GND_1_o_X_1_o_Mux_84_o_f5_95 (GND_1_o_X_1_o_Mux_84_o_f596)
+     MUXF6:I0->O           1   0.291   0.500  GND_1_o_X_1_o_Mux_84_o_f6_47 (GND_1_o_X_1_o_Mux_84_o_f648)
+     LUT3:I1->O            1   0.643   0.000  GND_1_o_X_1_o_Mux_84_o24 (GND_1_o_X_1_o_Mux_84_o25)
+     MUXF5:I0->O           1   0.276   0.000  GND_1_o_X_1_o_Mux_84_o_f5_107 (GND_1_o_X_1_o_Mux_84_o_f5108)
+     MUXF6:I0->O           5   0.291   0.713  GND_1_o_X_1_o_Mux_84_o_f6_53 (GND_1_o_X_1_o_Mux_84_o)
+     LUT2:I1->O            4   0.643   0.587  _n06971 (_n0697)
      FDRSE:S                   0.869          vga_r_out_0
     ----------------------------------------
-    Total                     23.827ns (14.724ns logic, 9.103ns route)
-                                       (61.8% logic, 38.2% route)
+    Total                     24.554ns (14.768ns logic, 9.786ns route)
+                                       (60.1% logic, 39.9% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLOCK_SERIAL'
-  Clock period: 5.892ns (frequency: 169.722MHz)
-  Total number of paths / destination ports: 467 / 102
+  Clock period: 6.205ns (frequency: 161.151MHz)
+  Total number of paths / destination ports: 1367 / 462
 -------------------------------------------------------------------------
-Delay:               5.892ns (Levels of Logic = 2)
+Delay:               6.205ns (Levels of Logic = 2)
   Source:            rx_counter_2 (FF)
   Destination:       rx_counter_1 (FF)
   Source Clock:      CLOCK_SERIAL rising
@@ -769,11 +762,11 @@ Delay:               5.892ns (Levels of Logic = 2)
     ----------------------------------------  ------------
      FDRE:C->Q            12   0.591   1.104  rx_counter_2 (rx_counter_2)
      LUT3:I0->O           14   0.648   1.032  _n063811 (_n06381)
-     LUT3:I2->O           14   0.648   1.000  rx_counter_cst1 (rx_counter_cst)
+     LUT3:I2->O          194   0.648   1.313  rx_counter_cst1 (rx_counter_cst)
      FDRSE:S                   0.869          rx_counter_1
     ----------------------------------------
-    Total                      5.892ns (2.756ns logic, 3.136ns route)
-                                       (46.8% logic, 53.2% route)
+    Total                      6.205ns (2.756ns logic, 3.449ns route)
+                                       (44.4% logic, 55.6% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'BUTTON_NORTH'
@@ -799,7 +792,7 @@ Delay:               2.580ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLOCK_SERIAL'
-  Total number of paths / destination ports: 63 / 59
+  Total number of paths / destination ports: 243 / 239
 -------------------------------------------------------------------------
 Offset:              5.384ns (Levels of Logic = 3)
   Source:            BUTTON_WEST (PAD)
@@ -894,8 +887,8 @@ Clock to Setup on destination clock CLOCK_25M
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
 BUTTON_NORTH   |    2.303|         |         |         |
-CLOCK_25M      |   23.827|         |         |         |
-CLOCK_SERIAL   |    7.403|         |         |         |
+CLOCK_25M      |   24.554|         |         |         |
+CLOCK_SERIAL   |   10.328|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock CLOCK_50M
@@ -911,15 +904,15 @@ Clock to Setup on destination clock CLOCK_SERIAL
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLOCK_25M      |   19.660|         |         |         |
-CLOCK_SERIAL   |    5.892|         |         |         |
+CLOCK_25M      |   17.755|         |         |         |
+CLOCK_SERIAL   |    6.205|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 29.00 secs
-Total CPU time to Xst completion: 10.59 secs
+Total REAL time to Xst completion: 28.00 secs
+Total CPU time to Xst completion: 20.77 secs
  
 WARNING:Xst:3152 - You have chosen to run a version of XST which is not the default solution
    for the specified device family. You are free to use it in order to take
@@ -932,7 +925,7 @@ WARNING:Xst:3152 - You have chosen to run a version of XST which is not the defa
 --> 
 
 
-Total memory usage is 378672 kilobytes
+Total memory usage is 494804 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  126 (   0 filtered)

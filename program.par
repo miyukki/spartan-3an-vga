@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-ubuntu::  Thu Nov 20 13:51:55 2014
+ubuntu::  Thu Nov 20 18:13:35 2014
 
 par -w -intstyle ise -ol high -t 1 program_map.ncd program.ncd program.pcf 
 
@@ -37,8 +37,8 @@ Design Summary Report:
 
 
    Number of BUFGMUXs                        4 out of 24     16%
-   Number of Slices                        179 out of 5888    3%
-      Number of SLICEMs                      6 out of 2944    1%
+   Number of Slices                        279 out of 5888    4%
+      Number of SLICEMs                     96 out of 2944    3%
 
 
 
@@ -47,8 +47,8 @@ Placer effort level (-pl):    High
 Placer cost table entry (-t): 1
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 6 secs 
-Finished initial Timing Analysis.  REAL time: 6 secs 
+Starting initial Timing Analysis.  REAL time: 7 secs 
+Finished initial Timing Analysis.  REAL time: 7 secs 
 
 WARNING:Par:288 - The signal BUTTON_EAST_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal BUTTON_SOUTH_IBUF has no load.  PAR will not attempt to route this signal.
@@ -58,13 +58,13 @@ Total REAL time at the beginning of Placer: 7 secs
 Total CPU  time at the beginning of Placer: 3 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:84705ce7) REAL time: 10 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:7e39aa74) REAL time: 9 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:84705ce7) REAL time: 10 secs 
+Phase 2.7  Design Feasibility Check (Checksum:7e39aa74) REAL time: 9 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:84705ce7) REAL time: 10 secs 
+Phase 3.31  Local Placement Optimization (Checksum:7e39aa74) REAL time: 9 secs 
 
 Phase 4.2  Initial Clock and IO Placement
 
@@ -76,30 +76,30 @@ WARNING:Place:1019 - A clock IOB / clock component pair have been found that are
    <BUTTON_NORTH.PAD> allowing your design to continue. This constraint disables all clock placer rules related to the
    specified COMP.PIN. The use of this override is highly discouraged as it may lead to very poor timing results. It is
    recommended that this error condition be corrected in the design.
-Phase 4.2  Initial Clock and IO Placement (Checksum:5a185f21) REAL time: 16 secs 
+Phase 4.2  Initial Clock and IO Placement (Checksum:5c6535ec) REAL time: 17 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:5a185f21) REAL time: 16 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:5c6535ec) REAL time: 17 secs 
 
 Phase 6.36  Local Placement Optimization
-Phase 6.36  Local Placement Optimization (Checksum:5a185f21) REAL time: 16 secs 
+Phase 6.36  Local Placement Optimization (Checksum:5c6535ec) REAL time: 17 secs 
 
 Phase 7.8  Global Placement
-.........................
-..
-Phase 7.8  Global Placement (Checksum:1d79f3cc) REAL time: 16 secs 
+......................................
+.......
+Phase 7.8  Global Placement (Checksum:3a24c498) REAL time: 17 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:1d79f3cc) REAL time: 16 secs 
+Phase 8.5  Local Placement Optimization (Checksum:3a24c498) REAL time: 17 secs 
 
 Phase 9.18  Placement Optimization
-Phase 9.18  Placement Optimization (Checksum:370ec714) REAL time: 16 secs 
+Phase 9.18  Placement Optimization (Checksum:9e6a3e2e) REAL time: 17 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:370ec714) REAL time: 16 secs 
+Phase 10.5  Local Placement Optimization (Checksum:9e6a3e2e) REAL time: 17 secs 
 
-Total REAL time to Placer completion: 16 secs 
-Total CPU  time to Placer completion: 7 secs 
+Total REAL time to Placer completion: 18 secs 
+Total CPU  time to Placer completion: 8 secs 
 Writing design to file program.ncd
 
 
@@ -107,26 +107,26 @@ Writing design to file program.ncd
 Starting Router
 
 
-Phase  1  : 1163 unrouted;      REAL time: 23 secs 
+Phase  1  : 2329 unrouted;      REAL time: 27 secs 
 
-Phase  2  : 1077 unrouted;      REAL time: 24 secs 
+Phase  2  : 2156 unrouted;      REAL time: 27 secs 
 
-Phase  3  : 172 unrouted;      REAL time: 24 secs 
+Phase  3  : 245 unrouted;      REAL time: 28 secs 
 
-Phase  4  : 172 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 25 secs 
+Phase  4  : 245 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 29 secs 
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 25 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 29 secs 
 
 Updating file: program.ncd with current fully routed design.
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 25 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 29 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 25 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 29 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 25 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 30 secs 
 
-Total REAL time to Router completion: 25 secs 
-Total CPU time to Router completion: 12 secs 
+Total REAL time to Router completion: 30 secs 
+Total CPU time to Router completion: 13 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -144,14 +144,14 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|      CLOCK_25M_BUFG |  BUFGMUX_X2Y1| No   |   18 |  0.047     |  1.038      |
+|      CLOCK_25M_BUFG |  BUFGMUX_X2Y1| No   |   19 |  0.047     |  1.058      |
 +---------------------+--------------+------+------+------------+-------------+
-|     CLOCK_50M_BUFGP | BUFGMUX_X2Y11| No   |    9 |  0.038     |  1.033      |
+|     CLOCK_50M_BUFGP | BUFGMUX_X2Y11| No   |    9 |  0.018     |  1.035      |
 +---------------------+--------------+------+------+------------+-------------+
-|   CLOCK_SERIAL_BUFG | BUFGMUX_X1Y11| No   |   30 |  0.048     |  1.024      |
+|   CLOCK_SERIAL_BUFG | BUFGMUX_X1Y11| No   |  120 |  0.109     |  1.088      |
 +---------------------+--------------+------+------+------------+-------------+
 |BUTTON_NORTH_IBUF_BU |              |      |      |            |             |
-|                  FG |  BUFGMUX_X2Y0| No   |    2 |  0.002     |  1.027      |
+|                  FG |  BUFGMUX_X2Y0| No   |    2 |  0.005     |  1.027      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -171,8 +171,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  NET "CLOCK_50M_BUFGP/IBUFG" PERIOD = 20 n | SETUP       |    15.228ns|     4.772ns|       0|           0
-  s HIGH 50%                                | HOLD        |     1.016ns|            |       0|           0
+  NET "CLOCK_50M_BUFGP/IBUFG" PERIOD = 20 n | SETUP       |    14.590ns|     5.410ns|       0|           0
+  s HIGH 50%                                | HOLD        |     0.998ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -185,10 +185,10 @@ All signals are completely routed.
 
 WARNING:Par:283 - There are 2 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 30 secs 
-Total CPU time to PAR completion: 15 secs 
+Total REAL time to PAR completion: 35 secs 
+Total CPU time to PAR completion: 16 secs 
 
-Peak Memory Usage:  617 MB
+Peak Memory Usage:  618 MB
 
 Placement: Completed - No errors found.
 Routing: Completed - No errors found.

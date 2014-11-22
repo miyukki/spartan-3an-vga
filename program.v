@@ -33,7 +33,10 @@ module program # (
     parameter V_BPORCH_LINE  = 33,
     parameter V_LIMIT_LINE   = V_ACTIVE_LINE + V_FPORCH_LINE + V_SYNC_LINE + V_BPORCH_LINE,
 
-    parameter BLOCK_SIZE = 40,
+    parameter BLOCK_SIZE = 10,
+    parameter H_BLOCK_COUNT = H_ACTIVE_PIXEL / BLOCK_SIZE,
+    parameter V_BLOCK_COUNT = V_ACTIVE_LINE / BLOCK_SIZE,
+    parameter BLOCK_COUNT = H_BLOCK_COUNT * V_BLOCK_COUNT,
 
     parameter SERIAL_CLOCK_PER_BAUD_RATE = 5208,
     parameter SERIAL_STATE_LAST = 8,
@@ -184,7 +187,7 @@ reg led_state2;
 assign LED[1] = led_state1;
 assign LED[2] = led_state2;
 
-reg [191:0] block = 1'b0;
+reg [BLOCK_COUNT-1:0] block = 1'b0;
 reg [3:0] select_line_pos = 4'b0;
 reg [3:0] select_pixel_pos = 4'b0;
 always @(posedge BUTTON_EAST) begin
@@ -221,7 +224,7 @@ always @(posedge CLOCK_25M) begin
         vga_b_out <= 4'd0;
     end
     else if (pixel_pos < H_ACTIVE_PIXEL && line_pos < V_ACTIVE_LINE) begin
-        if (block[(pixel_pos/BLOCK_SIZE) + ((line_pos/BLOCK_SIZE)*16)]) begin
+        if (block[(pixel_pos/BLOCK_SIZE) + ((line_pos/BLOCK_SIZE)*H_BLOCK_COUNT)]) begin
             vga_r_out <= 4'd15;
             vga_g_out <= 4'd0;
             vga_b_out <= 4'd0;

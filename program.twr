@@ -39,48 +39,17 @@ For more information, see Period Analysis in the Timing Closure User Guide (UG61
 
  232 paths analyzed, 49 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   4.772ns.
+ Minimum period is   5.410ns.
 --------------------------------------------------------------------------------
 
-Paths for end point serial_clock_counter_0 (SLICE_X49Y89.SR), 10 paths
+Paths for end point serial_clock_counter_0 (SLICE_X23Y82.SR), 10 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     15.228ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               serial_clock_counter_7 (FF)
-  Destination:          serial_clock_counter_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      4.752ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.020ns (0.005 - 0.025)
-  Source Clock:         CLOCK_50M_BUFGP rising at 0.000ns
-  Destination Clock:    CLOCK_50M_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.000ns
-
-  Maximum Data Path: serial_clock_counter_7 to serial_clock_counter_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X49Y92.YQ      Tcko                  0.580   serial_clock_counter<6>
-                                                       serial_clock_counter_7
-    SLICE_X48Y92.F1      net (fanout=2)        0.501   serial_clock_counter<7>
-    SLICE_X48Y92.X       Tilo                  0.692   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
-                                                       serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
-    SLICE_X48Y94.F1      net (fanout=1)        0.439   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
-    SLICE_X48Y94.X       Tif5x                 0.987   CLOCK_SERIAL
-                                                       serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv261
-                                                       serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv26_f5
-    SLICE_X49Y89.SR      net (fanout=7)        0.686   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv
-    SLICE_X49Y89.CLK     Tsrck                 0.867   serial_clock_counter<0>
-                                                       serial_clock_counter_0
-    -------------------------------------------------  ---------------------------
-    Total                                      4.752ns (3.126ns logic, 1.626ns route)
-                                                       (65.8% logic, 34.2% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     15.287ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     14.590ns (requirement - (data path - clock path skew + uncertainty))
   Source:               serial_clock_counter_9 (FF)
   Destination:          serial_clock_counter_0 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      4.693ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.020ns (0.005 - 0.025)
+  Data Path Delay:      5.419ns (Levels of Logic = 2)
+  Clock Path Skew:      0.009ns (0.014 - 0.005)
   Source Clock:         CLOCK_50M_BUFGP rising at 0.000ns
   Destination Clock:    CLOCK_50M_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
@@ -89,29 +58,60 @@ Slack (setup path):     15.287ns (requirement - (data path - clock path skew + u
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X49Y93.YQ      Tcko                  0.580   serial_clock_counter<8>
+    SLICE_X23Y86.YQ      Tcko                  0.580   serial_clock_counter<8>
                                                        serial_clock_counter_9
-    SLICE_X48Y92.F2      net (fanout=2)        0.442   serial_clock_counter<9>
-    SLICE_X48Y92.X       Tilo                  0.692   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
+    SLICE_X22Y86.F1      net (fanout=2)        0.501   serial_clock_counter<9>
+    SLICE_X22Y86.X       Tilo                  0.692   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
                                                        serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
-    SLICE_X48Y94.F1      net (fanout=1)        0.439   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
-    SLICE_X48Y94.X       Tif5x                 0.987   CLOCK_SERIAL
+    SLICE_X22Y87.F4      net (fanout=1)        0.845   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
+    SLICE_X22Y87.X       Tif5x                 0.987   CLOCK_SERIAL
                                                        serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv261
                                                        serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv26_f5
-    SLICE_X49Y89.SR      net (fanout=7)        0.686   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv
-    SLICE_X49Y89.CLK     Tsrck                 0.867   serial_clock_counter<0>
+    SLICE_X23Y82.SR      net (fanout=7)        0.947   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv
+    SLICE_X23Y82.CLK     Tsrck                 0.867   serial_clock_counter<0>
                                                        serial_clock_counter_0
     -------------------------------------------------  ---------------------------
-    Total                                      4.693ns (3.126ns logic, 1.567ns route)
-                                                       (66.6% logic, 33.4% route)
+    Total                                      5.419ns (3.126ns logic, 2.293ns route)
+                                                       (57.7% logic, 42.3% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     15.307ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     14.661ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               serial_clock_counter_7 (FF)
+  Destination:          serial_clock_counter_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.340ns (Levels of Logic = 2)
+  Clock Path Skew:      0.001ns (0.014 - 0.013)
+  Source Clock:         CLOCK_50M_BUFGP rising at 0.000ns
+  Destination Clock:    CLOCK_50M_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: serial_clock_counter_7 to serial_clock_counter_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y85.YQ      Tcko                  0.580   serial_clock_counter<6>
+                                                       serial_clock_counter_7
+    SLICE_X22Y86.F3      net (fanout=2)        0.422   serial_clock_counter<7>
+    SLICE_X22Y86.X       Tilo                  0.692   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
+                                                       serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
+    SLICE_X22Y87.F4      net (fanout=1)        0.845   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
+    SLICE_X22Y87.X       Tif5x                 0.987   CLOCK_SERIAL
+                                                       serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv261
+                                                       serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv26_f5
+    SLICE_X23Y82.SR      net (fanout=7)        0.947   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv
+    SLICE_X23Y82.CLK     Tsrck                 0.867   serial_clock_counter<0>
+                                                       serial_clock_counter_0
+    -------------------------------------------------  ---------------------------
+    Total                                      5.340ns (3.126ns logic, 2.214ns route)
+                                                       (58.5% logic, 41.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     14.674ns (requirement - (data path - clock path skew + uncertainty))
   Source:               serial_clock_counter_8 (FF)
   Destination:          serial_clock_counter_0 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      4.673ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.020ns (0.005 - 0.025)
+  Data Path Delay:      5.335ns (Levels of Logic = 2)
+  Clock Path Skew:      0.009ns (0.014 - 0.005)
   Source Clock:         CLOCK_50M_BUFGP rising at 0.000ns
   Destination Clock:    CLOCK_50M_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
@@ -120,63 +120,32 @@ Slack (setup path):     15.307ns (requirement - (data path - clock path skew + u
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X49Y93.XQ      Tcko                  0.591   serial_clock_counter<8>
+    SLICE_X23Y86.XQ      Tcko                  0.591   serial_clock_counter<8>
                                                        serial_clock_counter_8
-    SLICE_X48Y92.F3      net (fanout=2)        0.411   serial_clock_counter<8>
-    SLICE_X48Y92.X       Tilo                  0.692   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
+    SLICE_X22Y86.F4      net (fanout=2)        0.406   serial_clock_counter<8>
+    SLICE_X22Y86.X       Tilo                  0.692   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
                                                        serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
-    SLICE_X48Y94.F1      net (fanout=1)        0.439   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
-    SLICE_X48Y94.X       Tif5x                 0.987   CLOCK_SERIAL
+    SLICE_X22Y87.F4      net (fanout=1)        0.845   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
+    SLICE_X22Y87.X       Tif5x                 0.987   CLOCK_SERIAL
                                                        serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv261
                                                        serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv26_f5
-    SLICE_X49Y89.SR      net (fanout=7)        0.686   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv
-    SLICE_X49Y89.CLK     Tsrck                 0.867   serial_clock_counter<0>
+    SLICE_X23Y82.SR      net (fanout=7)        0.947   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv
+    SLICE_X23Y82.CLK     Tsrck                 0.867   serial_clock_counter<0>
                                                        serial_clock_counter_0
     -------------------------------------------------  ---------------------------
-    Total                                      4.673ns (3.137ns logic, 1.536ns route)
-                                                       (67.1% logic, 32.9% route)
+    Total                                      5.335ns (3.137ns logic, 2.198ns route)
+                                                       (58.8% logic, 41.2% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point serial_clock_counter_1 (SLICE_X49Y89.SR), 10 paths
+Paths for end point serial_clock_counter_1 (SLICE_X23Y82.SR), 10 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     15.228ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               serial_clock_counter_7 (FF)
-  Destination:          serial_clock_counter_1 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      4.752ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.020ns (0.005 - 0.025)
-  Source Clock:         CLOCK_50M_BUFGP rising at 0.000ns
-  Destination Clock:    CLOCK_50M_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.000ns
-
-  Maximum Data Path: serial_clock_counter_7 to serial_clock_counter_1
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X49Y92.YQ      Tcko                  0.580   serial_clock_counter<6>
-                                                       serial_clock_counter_7
-    SLICE_X48Y92.F1      net (fanout=2)        0.501   serial_clock_counter<7>
-    SLICE_X48Y92.X       Tilo                  0.692   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
-                                                       serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
-    SLICE_X48Y94.F1      net (fanout=1)        0.439   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
-    SLICE_X48Y94.X       Tif5x                 0.987   CLOCK_SERIAL
-                                                       serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv261
-                                                       serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv26_f5
-    SLICE_X49Y89.SR      net (fanout=7)        0.686   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv
-    SLICE_X49Y89.CLK     Tsrck                 0.867   serial_clock_counter<0>
-                                                       serial_clock_counter_1
-    -------------------------------------------------  ---------------------------
-    Total                                      4.752ns (3.126ns logic, 1.626ns route)
-                                                       (65.8% logic, 34.2% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     15.287ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     14.590ns (requirement - (data path - clock path skew + uncertainty))
   Source:               serial_clock_counter_9 (FF)
   Destination:          serial_clock_counter_1 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      4.693ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.020ns (0.005 - 0.025)
+  Data Path Delay:      5.419ns (Levels of Logic = 2)
+  Clock Path Skew:      0.009ns (0.014 - 0.005)
   Source Clock:         CLOCK_50M_BUFGP rising at 0.000ns
   Destination Clock:    CLOCK_50M_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
@@ -185,29 +154,60 @@ Slack (setup path):     15.287ns (requirement - (data path - clock path skew + u
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X49Y93.YQ      Tcko                  0.580   serial_clock_counter<8>
+    SLICE_X23Y86.YQ      Tcko                  0.580   serial_clock_counter<8>
                                                        serial_clock_counter_9
-    SLICE_X48Y92.F2      net (fanout=2)        0.442   serial_clock_counter<9>
-    SLICE_X48Y92.X       Tilo                  0.692   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
+    SLICE_X22Y86.F1      net (fanout=2)        0.501   serial_clock_counter<9>
+    SLICE_X22Y86.X       Tilo                  0.692   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
                                                        serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
-    SLICE_X48Y94.F1      net (fanout=1)        0.439   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
-    SLICE_X48Y94.X       Tif5x                 0.987   CLOCK_SERIAL
+    SLICE_X22Y87.F4      net (fanout=1)        0.845   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
+    SLICE_X22Y87.X       Tif5x                 0.987   CLOCK_SERIAL
                                                        serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv261
                                                        serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv26_f5
-    SLICE_X49Y89.SR      net (fanout=7)        0.686   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv
-    SLICE_X49Y89.CLK     Tsrck                 0.867   serial_clock_counter<0>
+    SLICE_X23Y82.SR      net (fanout=7)        0.947   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv
+    SLICE_X23Y82.CLK     Tsrck                 0.867   serial_clock_counter<0>
                                                        serial_clock_counter_1
     -------------------------------------------------  ---------------------------
-    Total                                      4.693ns (3.126ns logic, 1.567ns route)
-                                                       (66.6% logic, 33.4% route)
+    Total                                      5.419ns (3.126ns logic, 2.293ns route)
+                                                       (57.7% logic, 42.3% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     15.307ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     14.661ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               serial_clock_counter_7 (FF)
+  Destination:          serial_clock_counter_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.340ns (Levels of Logic = 2)
+  Clock Path Skew:      0.001ns (0.014 - 0.013)
+  Source Clock:         CLOCK_50M_BUFGP rising at 0.000ns
+  Destination Clock:    CLOCK_50M_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: serial_clock_counter_7 to serial_clock_counter_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y85.YQ      Tcko                  0.580   serial_clock_counter<6>
+                                                       serial_clock_counter_7
+    SLICE_X22Y86.F3      net (fanout=2)        0.422   serial_clock_counter<7>
+    SLICE_X22Y86.X       Tilo                  0.692   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
+                                                       serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
+    SLICE_X22Y87.F4      net (fanout=1)        0.845   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
+    SLICE_X22Y87.X       Tif5x                 0.987   CLOCK_SERIAL
+                                                       serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv261
+                                                       serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv26_f5
+    SLICE_X23Y82.SR      net (fanout=7)        0.947   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv
+    SLICE_X23Y82.CLK     Tsrck                 0.867   serial_clock_counter<0>
+                                                       serial_clock_counter_1
+    -------------------------------------------------  ---------------------------
+    Total                                      5.340ns (3.126ns logic, 2.214ns route)
+                                                       (58.5% logic, 41.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     14.674ns (requirement - (data path - clock path skew + uncertainty))
   Source:               serial_clock_counter_8 (FF)
   Destination:          serial_clock_counter_1 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      4.673ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.020ns (0.005 - 0.025)
+  Data Path Delay:      5.335ns (Levels of Logic = 2)
+  Clock Path Skew:      0.009ns (0.014 - 0.005)
   Source Clock:         CLOCK_50M_BUFGP rising at 0.000ns
   Destination Clock:    CLOCK_50M_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
@@ -216,63 +216,32 @@ Slack (setup path):     15.307ns (requirement - (data path - clock path skew + u
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X49Y93.XQ      Tcko                  0.591   serial_clock_counter<8>
+    SLICE_X23Y86.XQ      Tcko                  0.591   serial_clock_counter<8>
                                                        serial_clock_counter_8
-    SLICE_X48Y92.F3      net (fanout=2)        0.411   serial_clock_counter<8>
-    SLICE_X48Y92.X       Tilo                  0.692   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
+    SLICE_X22Y86.F4      net (fanout=2)        0.406   serial_clock_counter<8>
+    SLICE_X22Y86.X       Tilo                  0.692   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
                                                        serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
-    SLICE_X48Y94.F1      net (fanout=1)        0.439   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
-    SLICE_X48Y94.X       Tif5x                 0.987   CLOCK_SERIAL
+    SLICE_X22Y87.F4      net (fanout=1)        0.845   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
+    SLICE_X22Y87.X       Tif5x                 0.987   CLOCK_SERIAL
                                                        serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv261
                                                        serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv26_f5
-    SLICE_X49Y89.SR      net (fanout=7)        0.686   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv
-    SLICE_X49Y89.CLK     Tsrck                 0.867   serial_clock_counter<0>
+    SLICE_X23Y82.SR      net (fanout=7)        0.947   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv
+    SLICE_X23Y82.CLK     Tsrck                 0.867   serial_clock_counter<0>
                                                        serial_clock_counter_1
     -------------------------------------------------  ---------------------------
-    Total                                      4.673ns (3.137ns logic, 1.536ns route)
-                                                       (67.1% logic, 32.9% route)
+    Total                                      5.335ns (3.137ns logic, 2.198ns route)
+                                                       (58.8% logic, 41.2% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point serial_clock_counter_2 (SLICE_X49Y90.SR), 10 paths
+Paths for end point serial_clock_counter_2 (SLICE_X23Y83.SR), 10 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     15.242ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               serial_clock_counter_7 (FF)
-  Destination:          serial_clock_counter_2 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      4.747ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.011ns (0.014 - 0.025)
-  Source Clock:         CLOCK_50M_BUFGP rising at 0.000ns
-  Destination Clock:    CLOCK_50M_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.000ns
-
-  Maximum Data Path: serial_clock_counter_7 to serial_clock_counter_2
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X49Y92.YQ      Tcko                  0.580   serial_clock_counter<6>
-                                                       serial_clock_counter_7
-    SLICE_X48Y92.F1      net (fanout=2)        0.501   serial_clock_counter<7>
-    SLICE_X48Y92.X       Tilo                  0.692   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
-                                                       serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
-    SLICE_X48Y94.F1      net (fanout=1)        0.439   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
-    SLICE_X48Y94.X       Tif5x                 0.987   CLOCK_SERIAL
-                                                       serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv261
-                                                       serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv26_f5
-    SLICE_X49Y90.SR      net (fanout=7)        0.681   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv
-    SLICE_X49Y90.CLK     Tsrck                 0.867   serial_clock_counter<2>
-                                                       serial_clock_counter_2
-    -------------------------------------------------  ---------------------------
-    Total                                      4.747ns (3.126ns logic, 1.621ns route)
-                                                       (65.9% logic, 34.1% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     15.301ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     14.590ns (requirement - (data path - clock path skew + uncertainty))
   Source:               serial_clock_counter_9 (FF)
   Destination:          serial_clock_counter_2 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      4.688ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.011ns (0.014 - 0.025)
+  Data Path Delay:      5.419ns (Levels of Logic = 2)
+  Clock Path Skew:      0.009ns (0.014 - 0.005)
   Source Clock:         CLOCK_50M_BUFGP rising at 0.000ns
   Destination Clock:    CLOCK_50M_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
@@ -281,29 +250,60 @@ Slack (setup path):     15.301ns (requirement - (data path - clock path skew + u
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X49Y93.YQ      Tcko                  0.580   serial_clock_counter<8>
+    SLICE_X23Y86.YQ      Tcko                  0.580   serial_clock_counter<8>
                                                        serial_clock_counter_9
-    SLICE_X48Y92.F2      net (fanout=2)        0.442   serial_clock_counter<9>
-    SLICE_X48Y92.X       Tilo                  0.692   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
+    SLICE_X22Y86.F1      net (fanout=2)        0.501   serial_clock_counter<9>
+    SLICE_X22Y86.X       Tilo                  0.692   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
                                                        serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
-    SLICE_X48Y94.F1      net (fanout=1)        0.439   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
-    SLICE_X48Y94.X       Tif5x                 0.987   CLOCK_SERIAL
+    SLICE_X22Y87.F4      net (fanout=1)        0.845   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
+    SLICE_X22Y87.X       Tif5x                 0.987   CLOCK_SERIAL
                                                        serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv261
                                                        serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv26_f5
-    SLICE_X49Y90.SR      net (fanout=7)        0.681   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv
-    SLICE_X49Y90.CLK     Tsrck                 0.867   serial_clock_counter<2>
+    SLICE_X23Y83.SR      net (fanout=7)        0.947   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv
+    SLICE_X23Y83.CLK     Tsrck                 0.867   serial_clock_counter<2>
                                                        serial_clock_counter_2
     -------------------------------------------------  ---------------------------
-    Total                                      4.688ns (3.126ns logic, 1.562ns route)
-                                                       (66.7% logic, 33.3% route)
+    Total                                      5.419ns (3.126ns logic, 2.293ns route)
+                                                       (57.7% logic, 42.3% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     15.321ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     14.661ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               serial_clock_counter_7 (FF)
+  Destination:          serial_clock_counter_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.340ns (Levels of Logic = 2)
+  Clock Path Skew:      0.001ns (0.014 - 0.013)
+  Source Clock:         CLOCK_50M_BUFGP rising at 0.000ns
+  Destination Clock:    CLOCK_50M_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: serial_clock_counter_7 to serial_clock_counter_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y85.YQ      Tcko                  0.580   serial_clock_counter<6>
+                                                       serial_clock_counter_7
+    SLICE_X22Y86.F3      net (fanout=2)        0.422   serial_clock_counter<7>
+    SLICE_X22Y86.X       Tilo                  0.692   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
+                                                       serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
+    SLICE_X22Y87.F4      net (fanout=1)        0.845   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
+    SLICE_X22Y87.X       Tif5x                 0.987   CLOCK_SERIAL
+                                                       serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv261
+                                                       serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv26_f5
+    SLICE_X23Y83.SR      net (fanout=7)        0.947   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv
+    SLICE_X23Y83.CLK     Tsrck                 0.867   serial_clock_counter<2>
+                                                       serial_clock_counter_2
+    -------------------------------------------------  ---------------------------
+    Total                                      5.340ns (3.126ns logic, 2.214ns route)
+                                                       (58.5% logic, 41.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     14.674ns (requirement - (data path - clock path skew + uncertainty))
   Source:               serial_clock_counter_8 (FF)
   Destination:          serial_clock_counter_2 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      4.668ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.011ns (0.014 - 0.025)
+  Data Path Delay:      5.335ns (Levels of Logic = 2)
+  Clock Path Skew:      0.009ns (0.014 - 0.005)
   Source Clock:         CLOCK_50M_BUFGP rising at 0.000ns
   Destination Clock:    CLOCK_50M_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
@@ -312,34 +312,34 @@ Slack (setup path):     15.321ns (requirement - (data path - clock path skew + u
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X49Y93.XQ      Tcko                  0.591   serial_clock_counter<8>
+    SLICE_X23Y86.XQ      Tcko                  0.591   serial_clock_counter<8>
                                                        serial_clock_counter_8
-    SLICE_X48Y92.F3      net (fanout=2)        0.411   serial_clock_counter<8>
-    SLICE_X48Y92.X       Tilo                  0.692   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
+    SLICE_X22Y86.F4      net (fanout=2)        0.406   serial_clock_counter<8>
+    SLICE_X22Y86.X       Tilo                  0.692   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
                                                        serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
-    SLICE_X48Y94.F1      net (fanout=1)        0.439   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
-    SLICE_X48Y94.X       Tif5x                 0.987   CLOCK_SERIAL
+    SLICE_X22Y87.F4      net (fanout=1)        0.845   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv1
+    SLICE_X22Y87.X       Tif5x                 0.987   CLOCK_SERIAL
                                                        serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv261
                                                        serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv26_f5
-    SLICE_X49Y90.SR      net (fanout=7)        0.681   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv
-    SLICE_X49Y90.CLK     Tsrck                 0.867   serial_clock_counter<2>
+    SLICE_X23Y83.SR      net (fanout=7)        0.947   serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv
+    SLICE_X23Y83.CLK     Tsrck                 0.867   serial_clock_counter<2>
                                                        serial_clock_counter_2
     -------------------------------------------------  ---------------------------
-    Total                                      4.668ns (3.137ns logic, 1.531ns route)
-                                                       (67.2% logic, 32.8% route)
+    Total                                      5.335ns (3.137ns logic, 2.198ns route)
+                                                       (58.8% logic, 41.2% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: NET "CLOCK_50M_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point CLOCK_25M (SLICE_X33Y12.BY), 1 path
+Paths for end point CLOCK_25M (SLICE_X35Y11.BY), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      1.016ns (requirement - (clock path skew + uncertainty - data path))
+Slack (hold path):      0.998ns (requirement - (clock path skew + uncertainty - data path))
   Source:               CLOCK_25M (FF)
   Destination:          CLOCK_25M (FF)
   Requirement:          0.000ns
-  Data Path Delay:      1.016ns (Levels of Logic = 0)
+  Data Path Delay:      0.998ns (Levels of Logic = 0)
   Clock Path Skew:      0.000ns
   Source Clock:         CLOCK_50M_BUFGP rising at 20.000ns
   Destination Clock:    CLOCK_50M_BUFGP rising at 20.000ns
@@ -349,25 +349,53 @@ Slack (hold path):      1.016ns (requirement - (clock path skew + uncertainty - 
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X33Y12.YQ      Tcko                  0.464   CLOCK_25M
+    SLICE_X35Y11.YQ      Tcko                  0.464   CLOCK_25M
                                                        CLOCK_25M
-    SLICE_X33Y12.BY      net (fanout=2)        0.412   CLOCK_25M
-    SLICE_X33Y12.CLK     Tckdi       (-Th)    -0.140   CLOCK_25M
+    SLICE_X35Y11.BY      net (fanout=2)        0.394   CLOCK_25M
+    SLICE_X35Y11.CLK     Tckdi       (-Th)    -0.140   CLOCK_25M
                                                        CLOCK_25M
     -------------------------------------------------  ---------------------------
-    Total                                      1.016ns (0.604ns logic, 0.412ns route)
-                                                       (59.4% logic, 40.6% route)
+    Total                                      0.998ns (0.604ns logic, 0.394ns route)
+                                                       (60.5% logic, 39.5% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point CLOCK_SERIAL (SLICE_X48Y94.F4), 1 path
+Paths for end point CLOCK_SERIAL (SLICE_X22Y87.BX), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      1.526ns (requirement - (clock path skew + uncertainty - data path))
+Slack (hold path):      1.517ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               serial_clock_counter_12 (FF)
+  Destination:          CLOCK_SERIAL (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.562ns (Levels of Logic = 1)
+  Clock Path Skew:      0.045ns (0.272 - 0.227)
+  Source Clock:         CLOCK_50M_BUFGP rising at 20.000ns
+  Destination Clock:    CLOCK_50M_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: serial_clock_counter_12 to CLOCK_SERIAL
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y88.XQ      Tcko                  0.473   serial_clock_counter<12>
+                                                       serial_clock_counter_12
+    SLICE_X22Y87.BX      net (fanout=2)        0.449   serial_clock_counter<12>
+    SLICE_X22Y87.CLK     Tckdi       (-Th)    -0.640   CLOCK_SERIAL
+                                                       serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv26_f5
+                                                       CLOCK_SERIAL
+    -------------------------------------------------  ---------------------------
+    Total                                      1.562ns (1.113ns logic, 0.449ns route)
+                                                       (71.3% logic, 28.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point CLOCK_SERIAL (SLICE_X22Y87.F2), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      1.558ns (requirement - (clock path skew + uncertainty - data path))
   Source:               serial_clock_counter_11 (FF)
   Destination:          CLOCK_SERIAL (FF)
   Requirement:          0.000ns
-  Data Path Delay:      1.530ns (Levels of Logic = 1)
-  Clock Path Skew:      0.004ns (0.030 - 0.026)
+  Data Path Delay:      1.559ns (Levels of Logic = 1)
+  Clock Path Skew:      0.001ns (0.005 - 0.004)
   Source Clock:         CLOCK_50M_BUFGP rising at 20.000ns
   Destination Clock:    CLOCK_50M_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
@@ -376,45 +404,16 @@ Slack (hold path):      1.526ns (requirement - (clock path skew + uncertainty - 
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X49Y94.YQ      Tcko                  0.464   serial_clock_counter<10>
+    SLICE_X23Y87.YQ      Tcko                  0.464   serial_clock_counter<10>
                                                        serial_clock_counter_11
-    SLICE_X48Y94.F4      net (fanout=2)        0.325   serial_clock_counter<11>
-    SLICE_X48Y94.CLK     Tckf        (-Th)    -0.741   CLOCK_SERIAL
+    SLICE_X22Y87.F2      net (fanout=2)        0.354   serial_clock_counter<11>
+    SLICE_X22Y87.CLK     Tckf        (-Th)    -0.741   CLOCK_SERIAL
                                                        serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv261
                                                        serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv26_f5
                                                        CLOCK_SERIAL
     -------------------------------------------------  ---------------------------
-    Total                                      1.530ns (1.205ns logic, 0.325ns route)
-                                                       (78.8% logic, 21.2% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point CLOCK_SERIAL (SLICE_X48Y94.F2), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      1.564ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               serial_clock_counter_10 (FF)
-  Destination:          CLOCK_SERIAL (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      1.568ns (Levels of Logic = 1)
-  Clock Path Skew:      0.004ns (0.030 - 0.026)
-  Source Clock:         CLOCK_50M_BUFGP rising at 20.000ns
-  Destination Clock:    CLOCK_50M_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path: serial_clock_counter_10 to CLOCK_SERIAL
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X49Y94.XQ      Tcko                  0.473   serial_clock_counter<10>
-                                                       serial_clock_counter_10
-    SLICE_X48Y94.F2      net (fanout=2)        0.354   serial_clock_counter<10>
-    SLICE_X48Y94.CLK     Tckf        (-Th)    -0.741   CLOCK_SERIAL
-                                                       serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv261
-                                                       serial_clock_counter[12]_PWR_1_o_LessThan_2_o_inv26_f5
-                                                       CLOCK_SERIAL
-    -------------------------------------------------  ---------------------------
-    Total                                      1.568ns (1.214ns logic, 0.354ns route)
-                                                       (77.4% logic, 22.6% route)
+    Total                                      1.559ns (1.205ns logic, 0.354ns route)
+                                                       (77.3% logic, 22.7% route)
 
 --------------------------------------------------------------------------------
 
@@ -426,7 +425,7 @@ Slack: 18.398ns (period - (min low pulse limit / (low pulse / period)))
   Low pulse limit: 0.801ns (Tcl)
   Physical resource: CLOCK_SERIAL/CLK
   Logical resource: CLOCK_SERIAL/CK
-  Location pin: SLICE_X48Y94.CLK
+  Location pin: SLICE_X22Y87.CLK
   Clock network: CLOCK_50M_BUFGP
 --------------------------------------------------------------------------------
 Slack: 18.398ns (period - (min high pulse limit / (high pulse / period)))
@@ -435,7 +434,7 @@ Slack: 18.398ns (period - (min high pulse limit / (high pulse / period)))
   High pulse limit: 0.801ns (Tch)
   Physical resource: CLOCK_SERIAL/CLK
   Logical resource: CLOCK_SERIAL/CK
-  Location pin: SLICE_X48Y94.CLK
+  Location pin: SLICE_X22Y87.CLK
   Clock network: CLOCK_50M_BUFGP
 --------------------------------------------------------------------------------
 Slack: 18.398ns (period - min period limit)
@@ -443,7 +442,7 @@ Slack: 18.398ns (period - min period limit)
   Min period limit: 1.602ns (624.220MHz) (Tcp)
   Physical resource: CLOCK_SERIAL/CLK
   Logical resource: CLOCK_SERIAL/CK
-  Location pin: SLICE_X48Y94.CLK
+  Location pin: SLICE_X22Y87.CLK
   Clock network: CLOCK_50M_BUFGP
 --------------------------------------------------------------------------------
 
@@ -460,7 +459,7 @@ Clock to Setup on destination clock CLOCK_50M
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLOCK_50M      |    4.772|         |         |         |
+CLOCK_50M      |    5.410|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -472,20 +471,20 @@ Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 Constraints cover 232 paths, 0 nets, and 49 connections
 
 Design statistics:
-   Minimum period:   4.772ns{1}   (Maximum frequency: 209.556MHz)
+   Minimum period:   5.410ns{1}   (Maximum frequency: 184.843MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Thu Nov 20 13:52:37 2014 
+Analysis completed Thu Nov 20 18:14:19 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 388 MB
+Peak Memory Usage: 390 MB
 
 
 

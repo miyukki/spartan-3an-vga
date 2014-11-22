@@ -9,7 +9,7 @@ Target Device  : xc3s700an
 Target Package : fgg484
 Target Speed   : -4
 Mapper Version : spartan3a -- $Revision: 1.55 $
-Mapped Date    : Thu Nov 20 13:51:37 2014
+Mapped Date    : Thu Nov 20 18:13:17 2014
 
 Mapping design into LUTs...
 Running directed packing...
@@ -28,17 +28,17 @@ Design Summary:
 Number of errors:      0
 Number of warnings:    2
 Logic Utilization:
-  Number of Slice Flip Flops:            87 out of  11,776    1%
-  Number of 4 input LUTs:               264 out of  11,776    2%
+  Number of Slice Flip Flops:            88 out of  11,776    1%
+  Number of 4 input LUTs:               459 out of  11,776    3%
 Logic Distribution:
-  Number of occupied Slices:            179 out of   5,888    3%
-    Number of Slices containing only related logic:     179 out of     179 100%
-    Number of Slices containing unrelated logic:          0 out of     179   0%
+  Number of occupied Slices:            279 out of   5,888    4%
+    Number of Slices containing only related logic:     279 out of     279 100%
+    Number of Slices containing unrelated logic:          0 out of     279   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:         304 out of  11,776    2%
-    Number used as logic:               252
-    Number used as a route-thru:         40
-    Number used as Shift registers:      12
+  Total Number of 4 input LUTs:         495 out of  11,776    4%
+    Number used as logic:               267
+    Number used as a route-thru:         36
+    Number used as Shift registers:     192
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
@@ -46,10 +46,10 @@ Logic Distribution:
   Number of bonded IOBs:                 26 out of     372    6%
   Number of BUFGMUXs:                     4 out of      24   16%
 
-Average Fanout of Non-Clock Nets:                3.21
+Average Fanout of Non-Clock Nets:                3.92
 
-Peak Memory Usage:  633 MB
-Total REAL time to MAP completion:  7 secs 
+Peak Memory Usage:  635 MB
+Total REAL time to MAP completion:  10 secs 
 Total CPU time to MAP completion:   4 secs 
 
 NOTES:
